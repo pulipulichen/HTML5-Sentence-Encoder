@@ -1,3 +1,21 @@
-.input-trans-text {
-  background-color: #DDD !important;
+.Index {
+  .input-raw-text-textarea,
+  .input-trans-text-textarea,
+  .sentence-embedding-textarea {
+    @height: calc(100vh - 10rem) !important;
+    height: @height;
+    max-height: @height;
+  }
+  
+  .input-raw-text-textarea {
+    @height: calc(100vh - 11rem) !important;
+    height: @height;
+    max-height: @height;
+  }
+
+  .input-trans-text-textarea {
+    background-color: #DDD !important;
+  }
 }
+
+  

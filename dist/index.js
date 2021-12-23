@@ -2086,7 +2086,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".input-trans-text[data-v-82b7485c] {\n  background-color: #DDD !important;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/Index.less?vue&type=style&index=0&id=82b7485c&lang=less&scoped=true&","Index.less"],"names":[],"mappings":"AAAA;EACE,iCAAA;ACCF","file":"Index.less","sourcesContent":[".input-trans-text {\n  background-color: #DDD !important;\n}",".input-trans-text {\n  background-color: #DDD !important;\n}\n"]}]);
+exports.push([module.i, ".Index .input-raw-text-textarea[data-v-82b7485c],\n.Index .input-trans-text-textarea[data-v-82b7485c],\n.Index .sentence-embedding-textarea[data-v-82b7485c] {\n  height: calc(100vh - 10rem) !important;\n  max-height: calc(100vh - 10rem) !important;\n}\n.Index .input-raw-text-textarea[data-v-82b7485c] {\n  height: calc(100vh - 11rem) !important;\n  max-height: calc(100vh - 11rem) !important;\n}\n.Index .input-trans-text-textarea[data-v-82b7485c] {\n  background-color: #DDD !important;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/Index.less?vue&type=style&index=0&id=82b7485c&lang=less&scoped=true&","Index.less"],"names":[],"mappings":"AAAA;;;EAKI,sCAAA;EACA,0CAAA;ACDJ;ADLA;EAWI,sCAAA;EACA,0CAAA;ACHJ;ADTA;EAgBI,iCAAA;ACJJ","file":"Index.less","sourcesContent":[".Index {\n  .input-raw-text-textarea,\n  .input-trans-text-textarea,\n  .sentence-embedding-textarea {\n    @height: calc(100vh - 10rem) !important;\n    height: @height;\n    max-height: @height;\n  }\n  \n  .input-raw-text-textarea {\n    @height: calc(100vh - 11rem) !important;\n    height: @height;\n    max-height: @height;\n  }\n\n  .input-trans-text-textarea {\n    background-color: #DDD !important;\n  }\n}\n\n  ",".Index .input-raw-text-textarea,\n.Index .input-trans-text-textarea,\n.Index .sentence-embedding-textarea {\n  height: calc(100vh - 10rem) !important;\n  max-height: calc(100vh - 10rem) !important;\n}\n.Index .input-raw-text-textarea {\n  height: calc(100vh - 11rem) !important;\n  max-height: calc(100vh - 11rem) !important;\n}\n.Index .input-trans-text-textarea {\n  background-color: #DDD !important;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -2104,7 +2104,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, "", "",{"version":3,"sources":[],"names":[],"mappings":"","file":"IndexGlobal.less"}]);
+exports.push([module.i, "body,\nbody > .non-invasive-web-style-framework {\n  overflow: hidden !important;\n  overflow-y: hidden !important;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/IndexGlobal.less?vue&type=style&index=1&lang=less&","IndexGlobal.less"],"names":[],"mappings":"AAAA;;EAEE,2BAAA;EACA,6BAAA;ACCF","file":"IndexGlobal.less","sourcesContent":["body,\nbody > .non-invasive-web-style-framework {\n  overflow: hidden !important;\n  overflow-y: hidden !important;\n}","body,\nbody > .non-invasive-web-style-framework {\n  overflow: hidden !important;\n  overflow-y: hidden !important;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -18480,105 +18480,129 @@ var render = function () {
       _vm._v("\r\n    " + _vm._s(_vm.$t("Sentence Encode")) + "\r\n  "),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "two fields" }, [
-      _c("div", { staticClass: "field" }, [
-        _c("a", { staticClass: "ui fluid button" }, [
-          _c("i", { staticClass: "folder open outline icon" }),
-          _vm._v("\r\n        " + _vm._s(_vm.$t("OEPN")) + "\r\n      "),
+    _c("div", { staticClass: "ui grid" }, [
+      _c("div", { staticClass: "six wide column" }, [
+        _c("div", { staticClass: "field" }, [
+          _c("label", [
+            _vm._v(
+              "\r\n          " +
+                _vm._s(_vm.$t("Input Raw Text")) +
+                "\r\n        "
+            ),
+          ]),
         ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field" }, [
-        _c(
-          "select",
-          {
+        _vm._v(" "),
+        _c("div", { staticClass: "two fields" }, [
+          _c("div", { staticClass: "field" }, [
+            _c("a", { staticClass: "ui fluid button" }, [
+              _c("i", { staticClass: "folder open outline icon" }),
+              _vm._v(
+                "\r\n            " + _vm._s(_vm.$t("OEPN")) + "\r\n          "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field" }, [
+            _c(
+              "select",
+              {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.loadDemo,
+                    expression: "loadDemo",
+                  },
+                ],
+                on: {
+                  change: function ($event) {
+                    var $$selectedVal = Array.prototype.filter
+                      .call($event.target.options, function (o) {
+                        return o.selected
+                      })
+                      .map(function (o) {
+                        var val = "_value" in o ? o._value : o.value
+                        return val
+                      })
+                    _vm.loadDemo = $event.target.multiple
+                      ? $$selectedVal
+                      : $$selectedVal[0]
+                  },
+                },
+              },
+              [
+                _c("option", { attrs: { value: "none" } }, [
+                  _vm._v(_vm._s(_vm.$t("Select a demo"))),
+                ]),
+              ]
+            ),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("textarea", {
             directives: [
               {
                 name: "model",
                 rawName: "v-model",
-                value: _vm.loadDemo,
-                expression: "loadDemo",
+                value: _vm.InputRawText,
+                expression: "InputRawText",
               },
             ],
+            staticClass: "input-raw-text-textarea",
+            domProps: { value: _vm.InputRawText },
             on: {
-              change: function ($event) {
-                var $$selectedVal = Array.prototype.filter
-                  .call($event.target.options, function (o) {
-                    return o.selected
-                  })
-                  .map(function (o) {
-                    var val = "_value" in o ? o._value : o.value
-                    return val
-                  })
-                _vm.loadDemo = $event.target.multiple
-                  ? $$selectedVal
-                  : $$selectedVal[0]
+              input: function ($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.InputRawText = $event.target.value
               },
             },
-          },
-          [
-            _c("option", { attrs: { value: "none" } }, [
-              _vm._v(_vm._s(_vm.$t("Select a demo"))),
-            ]),
-          ]
-        ),
-      ]),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", [
-        _vm._v("\r\n      " + _vm._s(_vm.$t("Input Raw Text")) + "\r\n    "),
+          }),
+        ]),
       ]),
       _vm._v(" "),
-      _c("textarea", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.InputRawText,
-            expression: "InputRawText",
-          },
-        ],
-        domProps: { value: _vm.InputRawText },
-        on: {
-          input: function ($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.InputRawText = $event.target.value
-          },
-        },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", [
-        _vm._v("\r\n      " + _vm._s(_vm.$t("Translated Text")) + "\r\n    "),
+      _c("div", { staticClass: "five wide column" }, [
+        _c("div", { staticClass: "field" }, [
+          _c("label", [
+            _vm._v(
+              "\r\n          " +
+                _vm._s(_vm.$t("Translated Text")) +
+                "\r\n        "
+            ),
+          ]),
+          _vm._v(" "),
+          _c("textarea", {
+            staticClass: "input-trans-text-textarea",
+            attrs: { readonly: "" },
+            domProps: { innerHTML: _vm._s(_vm.InputTransText) },
+          }),
+        ]),
       ]),
       _vm._v(" "),
-      _c("textarea", {
-        staticClass: "input-trans-text",
-        attrs: { readonly: "" },
-        domProps: { innerHTML: _vm._s(_vm.InputTransText) },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("label", [
-        _vm._v(
-          "\r\n      " + _vm._s(_vm.$t("Sentence Embedding")) + "\r\n    "
-        ),
-      ]),
-      _vm._v(" "),
-      _c("textarea", {
-        domProps: { innerHTML: _vm._s(_vm.SentenceEmbedding) },
-      }),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "field" }, [
-      _c("a", { staticClass: "ui fluid button" }, [
-        _c("i", { staticClass: "save outline icon" }),
-        _vm._v("\r\n      " + _vm._s(_vm.$t("SAVE")) + "\r\n    "),
+      _c("div", { staticClass: "five wide column" }, [
+        _c("div", { staticClass: "field" }, [
+          _c("label", [
+            _vm._v(
+              "\r\n          " +
+                _vm._s(_vm.$t("Sentence Embedding")) +
+                "\r\n        "
+            ),
+          ]),
+          _vm._v(" "),
+          _c("textarea", {
+            staticClass: "sentence-embedding-textarea",
+            domProps: { innerHTML: _vm._s(_vm.SentenceEmbedding) },
+          }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("a", { staticClass: "ui fluid button" }, [
+            _c("i", { staticClass: "save outline icon" }),
+            _vm._v("\r\n          " + _vm._s(_vm.$t("SAVE")) + "\r\n        "),
+          ]),
+        ]),
       ]),
     ]),
   ])
