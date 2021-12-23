@@ -18483,7 +18483,7 @@ var render = function () {
     _c("div", { staticClass: "ui grid" }, [
       _c("div", { staticClass: "six wide column" }, [
         _c("div", { staticClass: "field" }, [
-          _c("label", [
+          _c("label", { attrs: { for: "InputRawText" } }, [
             _vm._v(
               "\r\n          " +
                 _vm._s(_vm.$t("Input Raw Text")) +
@@ -18566,6 +18566,7 @@ var render = function () {
               },
             ],
             staticClass: "input-raw-text-textarea",
+            attrs: { id: "InputRawText" },
             domProps: { value: _vm.InputRawText },
             on: {
               input: function ($event) {
@@ -18609,17 +18610,41 @@ var render = function () {
       _vm._v(" "),
       _c("div", { staticClass: "five wide column" }, [
         _c("div", { staticClass: "field" }, [
-          _c("label", [
-            _vm._v(
-              "\r\n          " +
-                _vm._s(_vm.$t("Translated Text")) +
-                "\r\n        "
-            ),
-          ]),
+          _c(
+            "label",
+            { attrs: { for: "InputTransText" } },
+            [
+              _vm._v(
+                "\r\n          " +
+                  _vm._s(_vm.$t("Preprocess")) +
+                  "\r\n          "
+              ),
+              _vm.nlpMode === "embedding"
+                ? [
+                    _vm._v(
+                      "\r\n            :\r\n            " +
+                        _vm._s(_vm.$t("Translated")) +
+                        "\r\n          "
+                    ),
+                  ]
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.nlpMode === "tokenization"
+                ? [
+                    _vm._v(
+                      "\r\n            :\r\n            " +
+                        _vm._s(_vm.$t("Tokenized")) +
+                        "\r\n          "
+                    ),
+                  ]
+                : _vm._e(),
+            ],
+            2
+          ),
           _vm._v(" "),
           _c("textarea", {
             staticClass: "input-trans-text-textarea",
-            attrs: { readonly: "" },
+            attrs: { id: "InputTransText", readonly: "" },
             domProps: { innerHTML: _vm._s(_vm.InputTransText) },
           }),
         ]),
@@ -18629,31 +18654,60 @@ var render = function () {
             _vm._v(
               "\r\n          " + _vm._s(_vm.$t("NEXT")) + "\r\n          "
             ),
-            _c("i", { staticClass: "save outline icon" }),
+            _c("i", {
+              staticClass: "arrow alternate circle right outline icon",
+            }),
           ]),
         ]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "five wide column" }, [
         _c("div", { staticClass: "field" }, [
-          _c("label", [
-            _vm._v(
-              "\r\n          " +
-                _vm._s(_vm.$t("Sentence Embedding")) +
-                "\r\n        "
-            ),
-          ]),
+          _c(
+            "label",
+            { attrs: { for: "SentenceEmbedding" } },
+            [
+              _vm._v(
+                "\r\n          " +
+                  _vm._s(_vm.$t("Stucture Data")) +
+                  "\r\n          "
+              ),
+              _vm.nlpMode === "embedding"
+                ? [
+                    _vm._v(
+                      "\r\n            :\r\n            " +
+                        _vm._s(_vm.$t("Embedding")) +
+                        "\r\n          "
+                    ),
+                  ]
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.nlpMode === "tokenization"
+                ? [
+                    _vm._v(
+                      "\r\n            :\r\n            " +
+                        _vm._s(_vm.$t("Word Vector")) +
+                        "\r\n          "
+                    ),
+                  ]
+                : _vm._e(),
+            ],
+            2
+          ),
           _vm._v(" "),
           _c("textarea", {
             staticClass: "sentence-embedding-textarea",
+            attrs: { id: "SentenceEmbedding" },
             domProps: { innerHTML: _vm._s(_vm.SentenceEmbedding) },
           }),
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "field" }, [
           _c("a", { staticClass: "ui fluid button" }, [
+            _vm._v(
+              "\r\n          " + _vm._s(_vm.$t("SAVE")) + "\r\n          "
+            ),
             _c("i", { staticClass: "save outline icon" }),
-            _vm._v("\r\n          " + _vm._s(_vm.$t("SAVE")) + "\r\n        "),
           ]),
         ]),
       ]),
@@ -31237,6 +31291,8 @@ let Index = {
       InputRawText: 'a',
       InputTransText: 'b',
       SentenceEmbedding: 'c',
+      
+      nlpMode: null,
       
       loadDemo: 'none'
     }

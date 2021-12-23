@@ -16,6 +16,8 @@ let Index = {
       InputTransText: 'b',
       SentenceEmbedding: 'c',
       
+      nlpMode: null,
+      
       loadDemo: 'none'
     }
   },

@@ -7,7 +7,7 @@
 
     <div class="six wide column">
       <div class="field">
-        <label>
+        <label for="InputRawText">
           {{ $t('Input Raw Text') }}
         </label>
       </div>
@@ -38,6 +38,7 @@
       <div class="field">
         <textarea 
           class="input-raw-text-textarea"
+          id="InputRawText"
           v-model="InputRawText"></textarea>
       </div>
       
@@ -60,11 +61,20 @@
 
     <div class="five wide column">
       <div class="field">
-        <label>
-          {{ $t('Translated Text') }}
+        <label for="InputTransText">
+          {{ $t('Preprocess') }}
+          <template v-if="nlpMode === 'embedding'">
+            :
+            {{ $t('Translated') }}
+          </template>
+          <template v-if="nlpMode === 'tokenization'">
+            :
+            {{ $t('Tokenized') }}
+          </template>
         </label>
         <textarea 
           v-html="InputTransText"
+          id="InputTransText"
           class="input-trans-text-textarea"
           readonly=""></textarea>
       </div>
@@ -72,25 +82,34 @@
       <div class="field">
         <a class="ui fluid button">
           {{ $t('NEXT') }}
-          <i class="save outline icon"></i>
+          <i class="arrow alternate circle right outline icon"></i>
         </a>
       </div>
     </div>
 
     <div class="five wide column">
       <div class="field">
-        <label>
-          {{ $t('Sentence Embedding') }}
+        <label for="SentenceEmbedding">
+          {{ $t('Stucture Data') }}
+          <template v-if="nlpMode === 'embedding'">
+            :
+            {{ $t('Embedding') }}
+          </template>
+          <template v-if="nlpMode === 'tokenization'">
+            :
+            {{ $t('Word Vector') }}
+          </template>
         </label>
         <textarea 
           class="sentence-embedding-textarea"
+          id="SentenceEmbedding"
           v-html="SentenceEmbedding"></textarea>
       </div>
 
       <div class="field">
         <a class="ui fluid button">
-          <i class="save outline icon"></i>
           {{ $t('SAVE') }}
+          <i class="save outline icon"></i>
         </a>
       </div>
     </div>
