@@ -1,6 +1,6 @@
 export default function (Index) {
   Index.components = {
-    //ControllerMenuTopBar: () => {return import(/* webpackChunkName: "components/ControllerMenuTopBar" */ './ControllerMenuTopBar/ControllerMenuTopBar.vue')},
+    LoadingOverlay: () => {return import(/* webpackChunkName: "components/LoadingOverlay" */ './LoadingOverlay/LoadingOverlay.vue')},
     
   }
 }

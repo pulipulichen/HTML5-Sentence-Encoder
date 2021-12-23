@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"vendors/semantic-ui-niwsf":"vendors/semantic-ui-niwsf"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"components/LoadingOverlay":"components/LoadingOverlay","vendors/semantic-ui-niwsf":"vendors/semantic-ui-niwsf"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -18475,244 +18475,264 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "Index ui form" }, [
-    _c("h1", { staticClass: "ui center aligned header" }, [
-      _vm._v("\r\n    " + _vm._s(_vm.$t("Sentence Encode")) + "\r\n  "),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "ui grid" }, [
-      _c("div", { staticClass: "six wide column" }, [
-        _c("div", { staticClass: "field" }, [
-          _c("label", { attrs: { for: "InputRawText" } }, [
-            _vm._v(
-              "\r\n          " +
-                _vm._s(_vm.$t("Input Raw Text")) +
-                "\r\n        "
-            ),
+  return _c(
+    "div",
+    { staticClass: "Index ui form" },
+    [
+      _vm.config.loading
+        ? _c("LoadingOverlay", {
+            ref: "LoadingOverlay",
+            attrs: {
+              config: _vm.config,
+              localConfig: _vm.localConfig,
+              utils: _vm.utils,
+            },
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _c("h1", { staticClass: "ui center aligned header" }, [
+        _vm._v("\r\n    " + _vm._s(_vm.$t("Sentence Encode")) + "\r\n  "),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "ui grid" }, [
+        _c("div", { staticClass: "six wide column" }, [
+          _c("div", { staticClass: "field" }, [
+            _c("label", { attrs: { for: "InputRawText" } }, [
+              _vm._v(
+                "\r\n          " +
+                  _vm._s(_vm.$t("Input Raw Text")) +
+                  "\r\n        "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "three fields" }, [
+            _c("div", { staticClass: "field" }, [
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.loadDemo,
+                      expression: "loadDemo",
+                    },
+                  ],
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.loadDemo = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
+                  },
+                },
+                [
+                  _c("option", { attrs: { value: "none" } }, [
+                    _vm._v(_vm._s(_vm.$t("Select a demo"))),
+                  ]),
+                  _vm._v(" "),
+                  _vm._l(_vm.demoOptions, function (item) {
+                    return _c("option", { domProps: { value: item.path } }, [
+                      _vm._v(_vm._s(_vm.$t(item.name))),
+                    ])
+                  }),
+                ],
+                2
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "field" }, [
+              _c("a", { staticClass: "ui fluid button" }, [
+                _c("i", { staticClass: "save outline icon" }),
+                _vm._v(
+                  "\r\n            " + _vm._s(_vm.$t("SAVE")) + "\r\n          "
+                ),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "field" }, [
+              _c("a", { staticClass: "ui fluid button" }, [
+                _c("i", { staticClass: "folder open outline icon" }),
+                _vm._v(
+                  "\r\n            " + _vm._s(_vm.$t("OEPN")) + "\r\n          "
+                ),
+              ]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field" }, [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.InputRawText,
+                  expression: "InputRawText",
+                },
+              ],
+              staticClass: "input-raw-text-textarea",
+              attrs: { id: "InputRawText" },
+              domProps: { value: _vm.InputRawText },
+              on: {
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.InputRawText = $event.target.value
+                },
+              },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "two fields" }, [
+            _c("div", { staticClass: "field" }, [
+              _c("a", { staticClass: "ui fluid button" }, [
+                _vm._v(
+                  "\r\n            " +
+                    _vm._s(_vm.$t("TOKENIZATION")) +
+                    "\r\n            "
+                ),
+                _c("i", {
+                  staticClass: "arrow alternate circle right outline icon",
+                }),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "field" }, [
+              _c(
+                "a",
+                { staticClass: "ui fluid button", on: { click: _vm.trans } },
+                [
+                  _vm._v(
+                    "\r\n            " +
+                      _vm._s(_vm.$t("EMBEDDING")) +
+                      "\r\n            "
+                  ),
+                  _c("i", {
+                    staticClass: "arrow alternate circle right outline icon",
+                  }),
+                ]
+              ),
+            ]),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "three fields" }, [
+        _c("div", { staticClass: "five wide column" }, [
           _c("div", { staticClass: "field" }, [
             _c(
-              "select",
-              {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.loadDemo,
-                    expression: "loadDemo",
-                  },
-                ],
-                on: {
-                  change: function ($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function (o) {
-                        return o.selected
-                      })
-                      .map(function (o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.loadDemo = $event.target.multiple
-                      ? $$selectedVal
-                      : $$selectedVal[0]
-                  },
-                },
-              },
+              "label",
+              { attrs: { for: "InputTransText" } },
               [
-                _c("option", { attrs: { value: "none" } }, [
-                  _vm._v(_vm._s(_vm.$t("Select a demo"))),
-                ]),
+                _vm._v(
+                  "\r\n          " +
+                    _vm._s(_vm.$t("Preprocess")) +
+                    "\r\n          "
+                ),
+                _vm.nlpMode === "embedding"
+                  ? [
+                      _vm._v(
+                        "\r\n            :\r\n            " +
+                          _vm._s(_vm.$t("Translated")) +
+                          "\r\n          "
+                      ),
+                    ]
+                  : _vm._e(),
                 _vm._v(" "),
-                _vm._l(_vm.demoOptions, function (item) {
-                  return _c("option", { domProps: { value: item.path } }, [
-                    _vm._v(_vm._s(_vm.$t(item.name))),
-                  ])
-                }),
+                _vm.nlpMode === "tokenization"
+                  ? [
+                      _vm._v(
+                        "\r\n            :\r\n            " +
+                          _vm._s(_vm.$t("Tokenized")) +
+                          "\r\n          "
+                      ),
+                    ]
+                  : _vm._e(),
               ],
               2
             ),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("a", { staticClass: "ui fluid button" }, [
-              _c("i", { staticClass: "save outline icon" }),
-              _vm._v(
-                "\r\n            " + _vm._s(_vm.$t("SAVE")) + "\r\n          "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("a", { staticClass: "ui fluid button" }, [
-              _c("i", { staticClass: "folder open outline icon" }),
-              _vm._v(
-                "\r\n            " + _vm._s(_vm.$t("OEPN")) + "\r\n          "
-              ),
-            ]),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.InputRawText,
-                expression: "InputRawText",
-              },
-            ],
-            staticClass: "input-raw-text-textarea",
-            attrs: { id: "InputRawText" },
-            domProps: { value: _vm.InputRawText },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.InputRawText = $event.target.value
-              },
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "two fields" }, [
-          _c("div", { staticClass: "field" }, [
-            _c("a", { staticClass: "ui fluid button" }, [
-              _vm._v(
-                "\r\n            " +
-                  _vm._s(_vm.$t("TOKENIZATION")) +
-                  "\r\n            "
-              ),
-              _c("i", {
-                staticClass: "arrow alternate circle right outline icon",
-              }),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("a", { staticClass: "ui fluid button" }, [
-              _vm._v(
-                "\r\n            " +
-                  _vm._s(_vm.$t("EMBEDDING")) +
-                  "\r\n            "
-              ),
-              _c("i", {
-                staticClass: "arrow alternate circle right outline icon",
-              }),
-            ]),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "five wide column" }, [
-        _c("div", { staticClass: "field" }, [
-          _c(
-            "label",
-            { attrs: { for: "InputTransText" } },
-            [
-              _vm._v(
-                "\r\n          " +
-                  _vm._s(_vm.$t("Preprocess")) +
-                  "\r\n          "
-              ),
-              _vm.nlpMode === "embedding"
-                ? [
-                    _vm._v(
-                      "\r\n            :\r\n            " +
-                        _vm._s(_vm.$t("Translated")) +
-                        "\r\n          "
-                    ),
-                  ]
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.nlpMode === "tokenization"
-                ? [
-                    _vm._v(
-                      "\r\n            :\r\n            " +
-                        _vm._s(_vm.$t("Tokenized")) +
-                        "\r\n          "
-                    ),
-                  ]
-                : _vm._e(),
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c("textarea", {
-            staticClass: "input-trans-text-textarea",
-            attrs: { id: "InputTransText", readonly: "" },
-            domProps: { innerHTML: _vm._s(_vm.InputTransText) },
-          }),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("a", { staticClass: "ui fluid button" }, [
-            _vm._v(
-              "\r\n          " + _vm._s(_vm.$t("NEXT")) + "\r\n          "
-            ),
-            _c("i", {
-              staticClass: "arrow alternate circle right outline icon",
+            _vm._v(" "),
+            _c("textarea", {
+              staticClass: "input-trans-text-textarea",
+              attrs: { id: "InputTransText", readonly: "" },
+              domProps: { innerHTML: _vm._s(_vm.InputTransText) },
             }),
           ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "five wide column" }, [
-        _c("div", { staticClass: "field" }, [
-          _c(
-            "label",
-            { attrs: { for: "SentenceEmbedding" } },
-            [
-              _vm._v(
-                "\r\n          " +
-                  _vm._s(_vm.$t("Stucture Data")) +
-                  "\r\n          "
-              ),
-              _vm.nlpMode === "embedding"
-                ? [
-                    _vm._v(
-                      "\r\n            :\r\n            " +
-                        _vm._s(_vm.$t("Embedding")) +
-                        "\r\n          "
-                    ),
-                  ]
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.nlpMode === "tokenization"
-                ? [
-                    _vm._v(
-                      "\r\n            :\r\n            " +
-                        _vm._s(_vm.$t("Word Vector")) +
-                        "\r\n          "
-                    ),
-                  ]
-                : _vm._e(),
-            ],
-            2
-          ),
           _vm._v(" "),
-          _c("textarea", {
-            staticClass: "sentence-embedding-textarea",
-            attrs: { id: "SentenceEmbedding" },
-            domProps: { innerHTML: _vm._s(_vm.SentenceEmbedding) },
-          }),
+          _c("div", { staticClass: "field" }, [
+            _c("a", { staticClass: "ui fluid button" }, [
+              _vm._v(
+                "\r\n          " + _vm._s(_vm.$t("NEXT")) + "\r\n          "
+              ),
+              _c("i", {
+                staticClass: "arrow alternate circle right outline icon",
+              }),
+            ]),
+          ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "field" }, [
-          _c("a", { staticClass: "ui fluid button" }, [
-            _vm._v(
-              "\r\n          " + _vm._s(_vm.$t("SAVE")) + "\r\n          "
+        _c("div", { staticClass: "five wide column" }, [
+          _c("div", { staticClass: "field" }, [
+            _c(
+              "label",
+              { attrs: { for: "SentenceEmbedding" } },
+              [
+                _vm._v(
+                  "\r\n          " +
+                    _vm._s(_vm.$t("Stucture Data")) +
+                    "\r\n          "
+                ),
+                _vm.nlpMode === "embedding"
+                  ? [
+                      _vm._v(
+                        "\r\n            :\r\n            " +
+                          _vm._s(_vm.$t("Embedding")) +
+                          "\r\n          "
+                      ),
+                    ]
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.nlpMode === "tokenization"
+                  ? [
+                      _vm._v(
+                        "\r\n            :\r\n            " +
+                          _vm._s(_vm.$t("Word Vector")) +
+                          "\r\n          "
+                      ),
+                    ]
+                  : _vm._e(),
+              ],
+              2
             ),
-            _c("i", { staticClass: "save outline icon" }),
+            _vm._v(" "),
+            _c("textarea", {
+              staticClass: "sentence-embedding-textarea",
+              attrs: { id: "SentenceEmbedding" },
+              domProps: { innerHTML: _vm._s(_vm.SentenceEmbedding) },
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field" }, [
+            _c("a", { staticClass: "ui fluid button" }, [
+              _vm._v(
+                "\r\n          " + _vm._s(_vm.$t("SAVE")) + "\r\n          "
+              ),
+              _c("i", { staticClass: "save outline icon" }),
+            ]),
           ]),
         ]),
       ]),
-    ]),
-  ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -31427,7 +31447,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
   Index.components = {
-    //ControllerMenuTopBar: () => {return import(/* webpackChunkName: "components/ControllerMenuTopBar" */ './ControllerMenuTopBar/ControllerMenuTopBar.vue')},
+    LoadingOverlay: () => {return __webpack_require__.e(/*! import() | components/LoadingOverlay */ "components/LoadingOverlay").then(__webpack_require__.bind(null, /*! ./LoadingOverlay/LoadingOverlay.vue */ "./src/components/LoadingOverlay/LoadingOverlay.vue"))},
     
   }
 });
@@ -31470,6 +31490,10 @@ __webpack_require__.r(__webpack_exports__);
     }
     
     return await this.utils.AxiosUtils.get(path)
+  }
+  
+  Index.methods.trans = async function () {
+    
   }
 });
 
@@ -31552,50 +31576,8 @@ let config = {
   },
   viewportSize: {
   },
+  loading: false,
   inited: false,
-  
-  // --------------------
-  
-  sentenceList: [],
-  practiceList: [],
-  diffList: [],
-  
-  playingIndex: 0,
-
-  synth: null,
-  voice: null,
-  voices: null,
-  //voiceName: null,
-  voiceNameList: [],
-  firstSpeakHint: true,
-
-  //pitch: 1,
-  //rate: 1,
-  speakingIndex: null,
-  speakingWordIndex: null,
-  speakingDiffWordIndex: null,
-
-  practiceIndex: null,
-
-  recognition: null,
-  recognitionResult: null,
-  recognitionResultEnd: false,
-  recognitionAbort: false,
-  
-  practiceSentence: null,
-  practiceSentenceEvaluationResult: [],
-  practiceSentenceEvaluationScore: null,
-  
-  currentWord: null,
-  practiceWord: null,
-  currentWordMask: false,
-  practiceWordScore: null,
-  
-  currentSentenceIsSpeaking: false,
-  currentSentenceIsPractice: false,
-  //currentSentenceMask: 'translation',
-  //currentSentenceMask: 'sentence-block',
-  currentSentenceMask: false,
   
 }
 

@@ -10,4 +10,8 @@ export default function (Index) {
     
     return await this.utils.AxiosUtils.get(path)
   }
+  
+  Index.methods.trans = async function () {
+    
+  }
 }

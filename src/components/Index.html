@@ -1,4 +1,13 @@
 <div class="Index ui form">
+  
+  <LoadingOverlay 
+    v-if="config.loading"
+    ref="LoadingOverlay"
+    v-bind:config="config"
+    v-bind:localConfig="localConfig"
+    v-bind:utils="utils">
+  </LoadingOverlay>
+  
   <h1 class="ui center aligned header">
     {{ $t('Sentence Encode') }}
   </h1>
@@ -50,7 +59,8 @@
           </a>
         </div>
         <div class="field">
-          <a class="ui fluid button">
+          <a class="ui fluid button"
+             v-on:click="trans">
             {{ $t('EMBEDDING') }}
             <i class="arrow alternate circle right outline icon"></i>
           </a>

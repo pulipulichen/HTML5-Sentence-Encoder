@@ -8,50 +8,8 @@ let config = {
   },
   viewportSize: {
   },
+  loading: false,
   inited: false,
-  
-  // --------------------
-  
-  sentenceList: [],
-  practiceList: [],
-  diffList: [],
-  
-  playingIndex: 0,
-
-  synth: null,
-  voice: null,
-  voices: null,
-  //voiceName: null,
-  voiceNameList: [],
-  firstSpeakHint: true,
-
-  //pitch: 1,
-  //rate: 1,
-  speakingIndex: null,
-  speakingWordIndex: null,
-  speakingDiffWordIndex: null,
-
-  practiceIndex: null,
-
-  recognition: null,
-  recognitionResult: null,
-  recognitionResultEnd: false,
-  recognitionAbort: false,
-  
-  practiceSentence: null,
-  practiceSentenceEvaluationResult: [],
-  practiceSentenceEvaluationScore: null,
-  
-  currentWord: null,
-  practiceWord: null,
-  currentWordMask: false,
-  practiceWordScore: null,
-  
-  currentSentenceIsSpeaking: false,
-  currentSentenceIsPractice: false,
-  //currentSentenceMask: 'translation',
-  //currentSentenceMask: 'sentence-block',
-  currentSentenceMask: false,
   
 }
 
