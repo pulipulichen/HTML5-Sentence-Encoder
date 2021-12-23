@@ -1,0 +1,138 @@
+<div class="ui modal ConfigurationModal" ref="Modal">
+  <i class="close icon"></i>
+  <div class="header">
+    {{ $t('Configuration') }}
+  </div>
+  <div class="content ui form">
+    
+    <div class="field">
+      <label>
+        {{ $t('Pitch') }}
+      </label>
+      <div class="ui fluid buttons">
+        <button type="button"
+                class="ui icon button"
+                v-bind:class="{disabled: (localConfig.pitch === 0.5)}"
+                v-on:click="pitchReduce">
+          <i class="minus icon"></i>
+        </button>
+        <a type="button"
+           class="ui disabled button pitch-item"
+           v-on:click="localConfig.pitch = 1">
+            {{ localConfig.pitch }}
+        </a>
+        <button type="button"
+                class="ui icon button"
+                v-bind:class="{disabled: (localConfig.pitch === 1.5)}"
+                v-on:click="pitchRise">
+          <i class="plus icon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="voiceName">
+        {{ $t('Voice') }}
+      </label>
+      <select 
+        id="voiceName"
+        v-model="localConfig.voiceName">
+        <option v-for="name in voiceNames"
+                v-bind:value="name">{{ name }}</option>
+      </select>
+    </div>
+    
+    <div class="field">
+      <label>
+        {{ $t('Practice Mode') }}
+      </label>
+      <div class="ui fluid buttons">
+        <button type="button"
+                class="ui button"
+                v-on:click="localConfig.practiceMode = 'speaking'"
+                v-bind:class="{'positive disabled': (localConfig.practiceMode === 'speaking')}">
+          {{ $t('Speaking') }}
+        </button>
+        <button type="button"
+                class="ui button"
+                v-on:click="localConfig.practiceMode = 'writing'"
+                v-bind:class="{'positive disabled': (localConfig.practiceMode === 'writing')}">
+          {{ $t('Writing') }}
+        </button>
+      </div>
+    </div>
+    
+    <div class="field">
+      <label for="practiceSentenceMask">
+        {{ $t('Practice Mask') }}
+      </label>
+      <select 
+        id="practiceSentenceMask"
+        v-model="localConfig.practiceSentenceMask">
+        <option value="none">
+          {{ $t('Do nothing') }}
+        </option>
+        <option value="translation">
+          {{ $t('Translation') }}
+        </option>
+        <option value="word-block">
+          {{ $t('Word Block') }}
+        </option>
+        <option value="sentence-block">
+          {{ $t('Sentence Block') }}
+        </option>
+      </select>
+    </div>
+    
+    <div class="field"
+         v-if="localConfig.practiceMode === 'speaking'">
+      <label>
+        {{ $t('Speaking Instruction Strategy') }}
+      </label>
+      <select v-model="localConfig.speakingInstructionStrategy">
+        <option value="none">
+          {{ $t('None') }}
+        </option>
+        <!--
+        <option value="free">
+          {{ $t('Free') }}
+        </option>
+        -->
+        <option value="sentence">
+          {{ $t('Full sentence') }}
+        </option>
+        <option value="words-by-words">
+          {{ $t('Words by words') }}
+        </option>
+        <option value="word-by-word">
+          {{ $t('Word by word') }}
+        </option>
+      </select>
+    </div>
+    
+    <div class="field"
+         v-if="localConfig.practiceMode === 'speaking'">
+      <label>
+        {{ $t('Speech to Text Mockup') }}
+      </label>
+      <select v-model="localConfig.debugSpeechToTextUtilsMockup">
+        <option value="false">
+          {{ $t('None') }}
+        </option>
+        <option value="auto">
+          {{ $t('Auto') }}
+        </option>
+        <option value="perfect">
+          {{ $t('Perfect') }}
+        </option>
+      </select>
+    </div>
+    
+  </div>
+  <div class="actions">
+    <div class="ui button"
+         v-on:click="close">
+      {{ $t('OK') }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="main-sentence-panel">
+  <CurrentSentence 
+    ref="CurrentSentence"
+    v-bind:config="config"
+    v-bind:localConfig="localConfig"
+    v-bind:utils="utils"
+    v-bind:sentence="sentence">
+  </CurrentSentence>
+
+  <PracticeSentencePanel 
+    ref="PracticeSentencePanel"
+    v-bind:config="config"
+    v-bind:localConfig="localConfig"
+    v-bind:utils="utils">
+  </PracticeSentencePanel>
+</div>

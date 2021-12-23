@@ -1,0 +1,32 @@
+.added {
+  color: red;
+  cursor: pointer;
+  
+  &.word-to-learn {
+    text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.5);
+  }
+}
+
+.removed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.SentenceDifference.positive {
+  .word:not(.removed):not(.added) {
+    color: #2c662d;
+  }
+  
+  &> .removed > .word {
+    color: gray !important;
+    text-decoration: line-through;
+  }
+}
+
+.word {
+  cursor: pointer;
+}
+
+.space {
+  pointer-events: none;
+}
