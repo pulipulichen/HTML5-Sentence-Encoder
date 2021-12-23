@@ -2086,7 +2086,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".Index .input-raw-text-textarea[data-v-82b7485c],\n.Index .input-trans-text-textarea[data-v-82b7485c],\n.Index .sentence-embedding-textarea[data-v-82b7485c] {\n  height: calc(100vh - 10rem) !important;\n  max-height: calc(100vh - 10rem) !important;\n}\n.Index .input-raw-text-textarea[data-v-82b7485c] {\n  height: calc(100vh - 11rem) !important;\n  max-height: calc(100vh - 11rem) !important;\n}\n.Index .input-trans-text-textarea[data-v-82b7485c] {\n  background-color: #DDD !important;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/Index.less?vue&type=style&index=0&id=82b7485c&lang=less&scoped=true&","Index.less"],"names":[],"mappings":"AAAA;;;EAKI,sCAAA;EACA,0CAAA;ACDJ;ADLA;EAWI,sCAAA;EACA,0CAAA;ACHJ;ADTA;EAgBI,iCAAA;ACJJ","file":"Index.less","sourcesContent":[".Index {\n  .input-raw-text-textarea,\n  .input-trans-text-textarea,\n  .sentence-embedding-textarea {\n    @height: calc(100vh - 10rem) !important;\n    height: @height;\n    max-height: @height;\n  }\n  \n  .input-raw-text-textarea {\n    @height: calc(100vh - 11rem) !important;\n    height: @height;\n    max-height: @height;\n  }\n\n  .input-trans-text-textarea {\n    background-color: #DDD !important;\n  }\n}\n\n  ",".Index .input-raw-text-textarea,\n.Index .input-trans-text-textarea,\n.Index .sentence-embedding-textarea {\n  height: calc(100vh - 10rem) !important;\n  max-height: calc(100vh - 10rem) !important;\n}\n.Index .input-raw-text-textarea {\n  height: calc(100vh - 11rem) !important;\n  max-height: calc(100vh - 11rem) !important;\n}\n.Index .input-trans-text-textarea {\n  background-color: #DDD !important;\n}\n"]}]);
+exports.push([module.i, ".Index .input-raw-text-textarea[data-v-82b7485c],\n.Index .input-trans-text-textarea[data-v-82b7485c],\n.Index .sentence-embedding-textarea[data-v-82b7485c] {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n}\n.Index .input-raw-text-textarea[data-v-82b7485c] {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n}\n.Index .input-trans-text-textarea[data-v-82b7485c] {\n  background-color: #DDD !important;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/Index.less?vue&type=style&index=0&id=82b7485c&lang=less&scoped=true&","Index.less"],"names":[],"mappings":"AAAA;;;EAKI,wCAAA;EACA,4CAAA;ACDJ;ADLA;EAWI,sCAAA;EACA,0CAAA;ACHJ;ADTA;EAgBI,iCAAA;ACJJ","file":"Index.less","sourcesContent":[".Index {\n  .input-raw-text-textarea,\n  .input-trans-text-textarea,\n  .sentence-embedding-textarea {\n    @height: calc(100vh - 10.6rem) !important;\n    height: @height;\n    max-height: @height;\n  }\n  \n  .input-raw-text-textarea {\n    @height: calc(100vh - 15rem) !important;\n    height: @height;\n    max-height: @height;\n  }\n\n  .input-trans-text-textarea {\n    background-color: #DDD !important;\n  }\n}\n\n  ",".Index .input-raw-text-textarea,\n.Index .input-trans-text-textarea,\n.Index .sentence-embedding-textarea {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n}\n.Index .input-raw-text-textarea {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n}\n.Index .input-trans-text-textarea {\n  background-color: #DDD !important;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -18492,16 +18492,7 @@ var render = function () {
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "two fields" }, [
-          _c("div", { staticClass: "field" }, [
-            _c("a", { staticClass: "ui fluid button" }, [
-              _c("i", { staticClass: "folder open outline icon" }),
-              _vm._v(
-                "\r\n            " + _vm._s(_vm.$t("OEPN")) + "\r\n          "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
+        _c("div", { staticClass: "three fields" }, [
           _c("div", { staticClass: "field" }, [
             _c(
               "select",
@@ -18534,8 +18525,33 @@ var render = function () {
                 _c("option", { attrs: { value: "none" } }, [
                   _vm._v(_vm._s(_vm.$t("Select a demo"))),
                 ]),
-              ]
+                _vm._v(" "),
+                _vm._l(_vm.demoOptions, function (item) {
+                  return _c("option", { domProps: { value: item.path } }, [
+                    _vm._v(_vm._s(_vm.$t(item.name))),
+                  ])
+                }),
+              ],
+              2
             ),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field" }, [
+            _c("a", { staticClass: "ui fluid button" }, [
+              _c("i", { staticClass: "save outline icon" }),
+              _vm._v(
+                "\r\n            " + _vm._s(_vm.$t("SAVE")) + "\r\n          "
+              ),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field" }, [
+            _c("a", { staticClass: "ui fluid button" }, [
+              _c("i", { staticClass: "folder open outline icon" }),
+              _vm._v(
+                "\r\n            " + _vm._s(_vm.$t("OEPN")) + "\r\n          "
+              ),
+            ]),
           ]),
         ]),
         _vm._v(" "),
@@ -18561,6 +18577,34 @@ var render = function () {
             },
           }),
         ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "two fields" }, [
+          _c("div", { staticClass: "field" }, [
+            _c("a", { staticClass: "ui fluid button" }, [
+              _vm._v(
+                "\r\n            " +
+                  _vm._s(_vm.$t("TOKENIZATION")) +
+                  "\r\n            "
+              ),
+              _c("i", {
+                staticClass: "arrow alternate circle right outline icon",
+              }),
+            ]),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "field" }, [
+            _c("a", { staticClass: "ui fluid button" }, [
+              _vm._v(
+                "\r\n            " +
+                  _vm._s(_vm.$t("EMBEDDING")) +
+                  "\r\n            "
+              ),
+              _c("i", {
+                staticClass: "arrow alternate circle right outline icon",
+              }),
+            ]),
+          ]),
+        ]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "five wide column" }, [
@@ -18578,6 +18622,15 @@ var render = function () {
             attrs: { readonly: "" },
             domProps: { innerHTML: _vm._s(_vm.InputTransText) },
           }),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "field" }, [
+          _c("a", { staticClass: "ui fluid button" }, [
+            _vm._v(
+              "\r\n          " + _vm._s(_vm.$t("NEXT")) + "\r\n          "
+            ),
+            _c("i", { staticClass: "save outline icon" }),
+          ]),
         ]),
       ]),
       _vm._v(" "),
@@ -31174,6 +31227,13 @@ let Index = {
   data () {    
     this.$i18n.locale = this.config.localConfig
     return {
+      demoOptions: [
+        {
+          path: './demo/qa-pet-fruit.csv',
+          name: 'Q&A Pet or Fruit'
+        }
+      ],
+      
       InputRawText: 'a',
       InputTransText: 'b',
       SentenceEmbedding: 'c',
@@ -31348,15 +31408,13 @@ __webpack_require__.r(__webpack_exports__);
 //import IndexMethodsDictionary from './IndexMethodsDictionary.js'
 
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
-//  IndexMethodsLocalStorage(Index)
-//  IndexMethodsDictionary(Index)
-  
-  // --------------------
-
-//  Index.methods.openConfigurationModal = function () {
-//    this.$refs.ConfigurationModal.open()
-//  }
-  
+  Index.methods.startToLoadDemo = async function (path) {
+    if (!path) {
+      return ''
+    }
+    
+    return await this.utils.AxiosUtils.get(path)
+  }
 });
 
 /***/ }),
@@ -31390,7 +31448,15 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
   Index.watch = {
-
+    loadDemo: async function () {
+      if (this.loadDemo === 'none') {
+        return false
+      }
+      
+      this.InputRawText = await this.startToLoadDemo(this.loadDemo)
+      
+      this.loadDemo = 'none'
+    }
 //    recognitionAbort() {
 //      if (this.recognitionAbort === true) {
 //        this.recognition.abort()
@@ -32333,184 +32399,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/utils/ResponsiveVoiceTextToSpeechUtils.js":
-/*!*******************************************************!*\
-  !*** ./src/utils/ResponsiveVoiceTextToSpeechUtils.js ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _AsyncUtils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AsyncUtils.js */ "./src/utils/AsyncUtils.js");
-/* global responsiveVoice */
-
-let preferName = [
-  'UK English Male',
-  'UK English Female',
-  'US English Male',
-  'US English Female',
-]
-
-
-
-let voices = []
-let voiceNameList
-let inited = false
-let voiceNameMap = {}
-let preferVoice
-let isSpeaking = false
-
-let pitch = 1
-let rate = 1
-
-//setTimeout(async () => {
-//  responsiveVoice.setDefaultVoice('UK English Male')
-//  await responsiveVoice.speak("hello world");
-//  console.log('OK')
-//}, 3000)
-
-const ResponsiveVoiceTextToSpeechUtils = {
-  init: async function () {
-    if (inited === true) {
-      return true
-    }
-    while (voices.length === 0) {
-      await _AsyncUtils_js__WEBPACK_IMPORTED_MODULE_0__["default"].sleep(500)
-      voices = responsiveVoice.getVoices()
-//      console.log(voices)
-    }
-
-    voiceNameList = voices.map(v => v.name)
-    voices.forEach(v => {
-      voiceNameMap[v.name] = v
-    })
-//    console.log(voiceNameList)
-    
-    if (!preferVoice) {
-      
-      for (let i = 0; i < preferName.length; i++) {
-        //console.log(preferName[i], )
-        if (voiceNameMap[preferName[i]]) {
-          preferVoice = voiceNameMap[preferName[i]]
-//          console.log(preferVoice.name)
-//          responsiveVoice.setDefaultVoice('UK English Male')
-//          //return preferVoice
-          break
-        }
-      }
-    }
-    
-//    responsiveVoice.setDefaultVoice('UK English Male')
-//    console.log(responsiveVoice)
-    inited = true
-  },
-  getVoiceNameList: async function () {
-    await this.init()
-    return voiceNameList
-  },
-  setPreferVoice: async function (voiceName) {
-    
-    await this.init()
-    
-    //console.log(voiceName, voiceNameMap)
-    if (!voiceName) {
-      
-      for (let i = 0; i < preferName.length; i++) {
-        //console.log(preferName[i], )
-        if (voiceNameMap[preferName[i]]) {
-          preferVoice = voiceNameMap[preferName[i]]
-          //responsiveVoice.setDefaultVoice(preferVoice.name)
-          return preferVoice
-        }
-      }
-    }
-    else {
-      if (voiceNameMap[voiceName]) {
-        preferVoice = voiceNameMap[voiceName]
-        //responsiveVoice.setDefaultVoice(preferVoice.name)
-        return preferVoice
-      }
-    }
-   
-    preferVoice = voices[0]
-    //console.log(preferVoice.name)
-    //responsiveVoice.setDefaultVoice(preferVoice.name)
-    return preferVoice
-  },
-  setPitch (value) {
-    pitch = value
-  },
-  setRate (value) {
-    rate = value
-  },
-  startSpeak: async function (text, option = {}) {
-    await this.init()
-    
-    text = text.trim()
-    if (text === '') {
-      return false
-    }
-    
-    if (isSpeaking === true) {
-      responsiveVoice.cancel()
-    }
-    
-    return new Promise(async (resolve) => {
-      //console.log(resolve)
-      
-//      utterThis.onerror = (event) => {
-//        isSpeaking = false
-//        console.log('onerror')
-//        resolve(false)
-//      }
-
-      if (!option.pitch) {
-        option.pitch = pitch
-      }
-      
-      if (!option.rate) {
-        option.rate = rate
-      }
-      
-      let voice = preferVoice.name
-      if (option.voice) {
-        voice = option.voice
-      }
-//      if (!option.voice) {
-//        responsiveVoice.setDefaultVoice(preferVoice.name)
-//      }
-//      else {
-//        responsiveVoice.setDefaultVoice(option.voice)
-//      }
-      
-      isSpeaking = true
-      let startTime = (new Date()).getTime()
-      
-      option.onend = () => {
-        isSpeaking = false
-        let endTime = (new Date()).getTime()
-        resolve(endTime - startTime)
-      }
-      
-      //console.log(option)
-      responsiveVoice.speak(text, voice, option)
-    })
-  },
-  stopSpeak () {
-    if (isSpeaking === true) {
-      responsiveVoice.cancel()
-    }
-    isSpeaking = false
-  }
-}
-
-ResponsiveVoiceTextToSpeechUtils.init()
-
-/* harmony default export */ __webpack_exports__["default"] = (ResponsiveVoiceTextToSpeechUtils);
-
-/***/ }),
-
 /***/ "./src/utils/SoundUtils.js":
 /*!*********************************!*\
   !*** ./src/utils/SoundUtils.js ***!
@@ -33445,10 +33333,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _date_helper_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_date_helper_js__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _DictUtils_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./DictUtils.js */ "./src/utils/DictUtils.js");
 /* harmony import */ var _SpeechToTextUtils_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SpeechToTextUtils.js */ "./src/utils/SpeechToTextUtils.js");
-/* harmony import */ var _ResponsiveVoiceTextToSpeechUtils_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ResponsiveVoiceTextToSpeechUtils.js */ "./src/utils/ResponsiveVoiceTextToSpeechUtils.js");
-/* harmony import */ var _SoundUtils_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./SoundUtils.js */ "./src/utils/SoundUtils.js");
-/* harmony import */ var _TransUtils_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./TransUtils.js */ "./src/utils/TransUtils.js");
-/* harmony import */ var _RandomUtils_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./RandomUtils.js */ "./src/utils/RandomUtils.js");
+/* harmony import */ var _SoundUtils_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./SoundUtils.js */ "./src/utils/SoundUtils.js");
+/* harmony import */ var _TransUtils_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./TransUtils.js */ "./src/utils/TransUtils.js");
+/* harmony import */ var _RandomUtils_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./RandomUtils.js */ "./src/utils/RandomUtils.js");
 
 
 
@@ -33464,7 +33351,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   AsyncUtils: _AsyncUtils_js__WEBPACK_IMPORTED_MODULE_0__["default"],
   DiffUtils: _DiffUtils_js__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -33474,11 +33360,10 @@ __webpack_require__.r(__webpack_exports__);
   URLUtils: _URLUtils_js__WEBPACK_IMPORTED_MODULE_5__["default"],
   DictUtils: _DictUtils_js__WEBPACK_IMPORTED_MODULE_7__["default"],
   SpeechToTextUtils: _SpeechToTextUtils_js__WEBPACK_IMPORTED_MODULE_8__["default"],
-  TextToSpeechUtils: _ResponsiveVoiceTextToSpeechUtils_js__WEBPACK_IMPORTED_MODULE_9__["default"],
   //TextToSpeechUtils,
-  SoundUtils: _SoundUtils_js__WEBPACK_IMPORTED_MODULE_10__["default"],
-  TransUtils: _TransUtils_js__WEBPACK_IMPORTED_MODULE_11__["default"],
-  RandomUtils: _RandomUtils_js__WEBPACK_IMPORTED_MODULE_12__["default"]
+  SoundUtils: _SoundUtils_js__WEBPACK_IMPORTED_MODULE_9__["default"],
+  TransUtils: _TransUtils_js__WEBPACK_IMPORTED_MODULE_10__["default"],
+  RandomUtils: _RandomUtils_js__WEBPACK_IMPORTED_MODULE_11__["default"]
 });
 
 /***/ })

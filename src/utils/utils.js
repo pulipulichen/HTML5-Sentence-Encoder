@@ -9,7 +9,6 @@ import './date-helper.js'
 import DictUtils from './DictUtils.js'
 import SpeechToTextUtils from './SpeechToTextUtils.js'
 //import TextToSpeechUtils from './TextToSpeechUtils.js'
-import ResponsiveVoiceTextToSpeechUtils from './ResponsiveVoiceTextToSpeechUtils.js'
 import SoundUtils from './SoundUtils.js'
 import TransUtils from './TransUtils.js'
 import RandomUtils from './RandomUtils.js'
@@ -23,7 +22,6 @@ export default {
   URLUtils,
   DictUtils,
   SpeechToTextUtils,
-  TextToSpeechUtils: ResponsiveVoiceTextToSpeechUtils,
   //TextToSpeechUtils,
   SoundUtils,
   TransUtils,
