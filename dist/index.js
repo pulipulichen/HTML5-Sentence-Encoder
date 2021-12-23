@@ -18483,7 +18483,7 @@ var render = function () {
     _c("div", { staticClass: "two fields" }, [
       _c("div", { staticClass: "field" }, [
         _c("a", { staticClass: "ui fluid button" }, [
-          _c("i", { staticClass: "open icon" }),
+          _c("i", { staticClass: "folder open outline icon" }),
           _vm._v("\r\n        " + _vm._s(_vm.$t("OEPN")) + "\r\n      "),
         ]),
       ]),
@@ -18573,6 +18573,13 @@ var render = function () {
       _c("textarea", {
         domProps: { innerHTML: _vm._s(_vm.SentenceEmbedding) },
       }),
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "field" }, [
+      _c("a", { staticClass: "ui fluid button" }, [
+        _c("i", { staticClass: "save outline icon" }),
+        _vm._v("\r\n      " + _vm._s(_vm.$t("SAVE")) + "\r\n    "),
+      ]),
     ]),
   ])
 }
