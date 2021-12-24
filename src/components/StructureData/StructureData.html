@@ -18,9 +18,10 @@
       v-model="config.StructureText"></textarea>
   </div>
 
-  <div class="two fields">
+  <div class="three fields">
     <div class="field">
       <a class="ui fluid button"
+         v-bind:class="{disabled: noData}"
          v-on:click="copy">
         {{ $t('COPY') }}
         <i class="copy icon"></i>
@@ -28,9 +29,18 @@
     </div>
     <div class="field">
       <a class="ui fluid button"
+         v-bind:class="{disabled: noData}"
          v-on:click="save">
         {{ $t('SAVE') }}
         <i class="save outline icon"></i>
+      </a>
+    </div>
+    <div class="field">
+      <a class="ui fluid button"
+         v-bind:class="{disabled: noData}"
+         v-on:click="classify">
+        {{ $t('CLASSIFY') }}
+        <i class="sitemap icon"></i>
       </a>
     </div>
   </div>

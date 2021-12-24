@@ -29,7 +29,9 @@ let PreprocessTextarea = {
     }
   },
   computed: {
-    
+    noData () {
+      return (!this.config.PreprocessText || this.config.PreprocessText === '')
+    }
   },
   mounted() {
     

@@ -1,27 +1,28 @@
 <div class="PreprocessTextarea">
   <div class="field">
-        <label for="InputTransText">
-          {{ $t('Preprocess') }}
-          <template v-if="config.nlpMode === 'embedding'">
-            :
-            {{ $t('Translated') }}
-          </template>
-          <template v-if="config.nlpMode === 'tokenization'">
-            :
-            {{ $t('Tokenized') }}
-          </template>
-        </label>
-        <textarea 
-          v-model="config.PreprocessText"
-          id="InputTransText"
-          class="input-trans-text-textarea"></textarea>
-      </div>
-      
-      <div class="field">
-        <a class="ui fluid button"
-           v-on:click="next">
-          {{ $t('NEXT') }}
-          <i class="arrow alternate circle right outline icon"></i>
-        </a>
-      </div>
+    <label for="InputTransText">
+      {{ $t('Preprocess') }}
+      <template v-if="config.nlpMode === 'embedding'">
+        :
+        {{ $t('Translated') }}
+      </template>
+      <template v-if="config.nlpMode === 'tokenization'">
+        :
+        {{ $t('Tokenized') }}
+      </template>
+    </label>
+    <textarea 
+      v-model="config.PreprocessText"
+      id="InputTransText"
+      class="input-trans-text-textarea"></textarea>
+  </div>
+
+  <div class="field">
+    <a class="ui fluid button"
+       v-bind:class="{disabled: noData}"
+       v-on:click="next">
+      {{ $t('NEXT') }}
+      <i class="arrow alternate circle right outline icon"></i>
+    </a>
+  </div>
 </div>

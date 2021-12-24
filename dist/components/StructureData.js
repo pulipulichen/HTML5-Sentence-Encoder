@@ -102,19 +102,50 @@ var render = function () {
       }),
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "two fields" }, [
+    _c("div", { staticClass: "three fields" }, [
       _c("div", { staticClass: "field" }, [
-        _c("a", { staticClass: "ui fluid button", on: { click: _vm.copy } }, [
-          _vm._v("\n        " + _vm._s(_vm.$t("COPY")) + "\n        "),
-          _c("i", { staticClass: "copy icon" }),
-        ]),
+        _c(
+          "a",
+          {
+            staticClass: "ui fluid button",
+            class: { disabled: _vm.noData },
+            on: { click: _vm.copy },
+          },
+          [
+            _vm._v("\n        " + _vm._s(_vm.$t("COPY")) + "\n        "),
+            _c("i", { staticClass: "copy icon" }),
+          ]
+        ),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "field" }, [
-        _c("a", { staticClass: "ui fluid button", on: { click: _vm.save } }, [
-          _vm._v("\n        " + _vm._s(_vm.$t("SAVE")) + "\n        "),
-          _c("i", { staticClass: "save outline icon" }),
-        ]),
+        _c(
+          "a",
+          {
+            staticClass: "ui fluid button",
+            class: { disabled: _vm.noData },
+            on: { click: _vm.save },
+          },
+          [
+            _vm._v("\n        " + _vm._s(_vm.$t("SAVE")) + "\n        "),
+            _c("i", { staticClass: "save outline icon" }),
+          ]
+        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "field" }, [
+        _c(
+          "a",
+          {
+            staticClass: "ui fluid button",
+            class: { disabled: _vm.noData },
+            on: { click: _vm.classify },
+          },
+          [
+            _vm._v("\n        " + _vm._s(_vm.$t("CLASSIFY")) + "\n        "),
+            _c("i", { staticClass: "sitemap icon" }),
+          ]
+        ),
       ]),
     ]),
   ])
@@ -208,7 +239,9 @@ let StructureData = {
     }
   },
   computed: {
-    
+    noData () {
+      return (!this.config.StructureText || this.config.StructureText === '')
+    }
   },
   mounted() {
     
@@ -265,9 +298,18 @@ let StructureData = {
       })
     },
     copy () {
-      
+      this.utils.ClipboardUtils.copyPlainString(Papa.unparse(this.config.StructureData, {
+        delimiter: '\t'
+      }))
     },
     save () {
+      let filename = this.config.nlpMode 
+        + '-' 
+        + (new Date()).mmddhhmm()
+        + '.csv'
+      this.utils.FileUtils.download(filename, this.config.StructureText)
+    },
+    classify () {
       
     }
   }

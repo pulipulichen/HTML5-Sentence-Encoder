@@ -1,13 +1,5 @@
 <div class="Index ui form">
   
-  <LoadingOverlay 
-    v-if="config.loading"
-    ref="LoadingOverlay"
-    v-bind:config="config"
-    v-bind:localConfig="localConfig"
-    v-bind:utils="utils">
-  </LoadingOverlay>
-  
   <h1 class="ui center aligned header">
     {{ $t('Sentence Encode') }}
   </h1>
@@ -43,4 +35,13 @@
       
     </div>
   </div>
+  
+  <LoadingOverlay 
+    v-if="config.loading"
+    ref="LoadingOverlay"
+    v-bind:config="config"
+    v-bind:localConfig="localConfig"
+    v-bind:utils="utils">
+  </LoadingOverlay>
+  
 </div>

@@ -31,7 +31,9 @@ let StructureData = {
     }
   },
   computed: {
-    
+    noData () {
+      return (!this.config.StructureText || this.config.StructureText === '')
+    }
   },
   mounted() {
     
@@ -88,9 +90,18 @@ let StructureData = {
       })
     },
     copy () {
-      
+      this.utils.ClipboardUtils.copyPlainString(Papa.unparse(this.config.StructureData, {
+        delimiter: '\t'
+      }))
     },
     save () {
+      let filename = this.config.nlpMode 
+        + '-' 
+        + (new Date()).mmddhhmm()
+        + '.csv'
+      this.utils.FileUtils.download(filename, this.config.StructureText)
+    },
+    classify () {
       
     }
   }

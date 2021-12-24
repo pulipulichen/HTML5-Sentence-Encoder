@@ -55,15 +55,13 @@ var render = function () {
         "label",
         { attrs: { for: "InputTransText" } },
         [
-          _vm._v(
-            "\n          " + _vm._s(_vm.$t("Preprocess")) + "\n          "
-          ),
+          _vm._v("\n      " + _vm._s(_vm.$t("Preprocess")) + "\n      "),
           _vm.config.nlpMode === "embedding"
             ? [
                 _vm._v(
-                  "\n            :\n            " +
+                  "\n        :\n        " +
                     _vm._s(_vm.$t("Translated")) +
-                    "\n          "
+                    "\n      "
                 ),
               ]
             : _vm._e(),
@@ -71,9 +69,9 @@ var render = function () {
           _vm.config.nlpMode === "tokenization"
             ? [
                 _vm._v(
-                  "\n            :\n            " +
+                  "\n        :\n        " +
                     _vm._s(_vm.$t("Tokenized")) +
-                    "\n          "
+                    "\n      "
                 ),
               ]
             : _vm._e(),
@@ -105,10 +103,18 @@ var render = function () {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "field" }, [
-      _c("a", { staticClass: "ui fluid button", on: { click: _vm.next } }, [
-        _vm._v("\n          " + _vm._s(_vm.$t("NEXT")) + "\n          "),
-        _c("i", { staticClass: "arrow alternate circle right outline icon" }),
-      ]),
+      _c(
+        "a",
+        {
+          staticClass: "ui fluid button",
+          class: { disabled: _vm.noData },
+          on: { click: _vm.next },
+        },
+        [
+          _vm._v("\n      " + _vm._s(_vm.$t("NEXT")) + "\n      "),
+          _c("i", { staticClass: "arrow alternate circle right outline icon" }),
+        ]
+      ),
     ]),
   ])
 }
@@ -199,7 +205,9 @@ let PreprocessTextarea = {
     }
   },
   computed: {
-    
+    noData () {
+      return (!this.config.PreprocessText || this.config.PreprocessText === '')
+    }
   },
   mounted() {
     

@@ -18479,17 +18479,6 @@ var render = function () {
     "div",
     { staticClass: "Index ui form" },
     [
-      _vm.config.loading
-        ? _c("LoadingOverlay", {
-            ref: "LoadingOverlay",
-            attrs: {
-              config: _vm.config,
-              localConfig: _vm.localConfig,
-              utils: _vm.utils,
-            },
-          })
-        : _vm._e(),
-      _vm._v(" "),
       _c("h1", { staticClass: "ui center aligned header" }, [
         _vm._v("\r\n    " + _vm._s(_vm.$t("Sentence Encode")) + "\r\n  "),
       ]),
@@ -18543,6 +18532,17 @@ var render = function () {
           1
         ),
       ]),
+      _vm._v(" "),
+      _vm.config.loading
+        ? _c("LoadingOverlay", {
+            ref: "LoadingOverlay",
+            attrs: {
+              config: _vm.config,
+              localConfig: _vm.localConfig,
+              utils: _vm.utils,
+            },
+          })
+        : _vm._e(),
     ],
     1
   )
