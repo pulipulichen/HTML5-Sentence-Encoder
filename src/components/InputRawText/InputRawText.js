@@ -1,3 +1,5 @@
+/* global XLSX */
+
 const Papa = require('papaparse')
 
 let InputRawText = {
@@ -109,8 +111,88 @@ let InputRawText = {
       
       this.utils.FileUtils.downloadODS(filename, this.getInputRawArray())
     },
-    openSourceFile () {
+    openSourceFile (evt) {
+      //console.log(1);
+      if (!window.FileReader) {
+        return; // Browser is not compatible
+      }
+
+      var reader = new FileReader();
+      let filename = evt.target.files[0].name
+      let type = evt.target.files[0].type
+      //console.log(type)
+      if (filename.indexOf('.') > -1) {
+        filename = filename.slice(0, filename.lastIndexOf('.'))
+      }
+
+      reader.onload = async (evt) => {
+        if (evt.target.readyState !== 2) {
+          this.processOutputWait = false
+          return;
+        }
+        if (evt.target.error) {
+          alert('Error while reading file');
+          this.processOutputWait = false
+          return;
+        }
+
+        let result = evt.target.result
+        if (type === 'application/vnd.oasis.opendocument.spreadsheet'
+                || type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
+          this.config.InputRawText = await this.processUploadTypeSheet(result)
+        } else {
+          this.config.InputRawText = result
+        }
+        this.$refs.InputFileOpenTrigger.value = ''
+      }
+
+      if (type === 'application/vnd.oasis.opendocument.spreadsheet'
+              || type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
+        let size = evt.target.files[0].size
+        //console.log('size', size)
+        if (size > 25000000) {
+          window.alert('ODS/XLSX檔案大小請低於2.5MB。')
+          return false
+        }
+
+        reader.readAsBinaryString(evt.target.files[0])
+      } else {
+        reader.readAsText(evt.target.files[0])
+      }
+    },
+    processUploadTypeSheet: async function (input) {
+      var workbook = await XLSX.readAsync(input, {type: 'binary'});
+
+      var result = [];
+      for (let i in workbook.SheetNames) {
+        let sheetName = workbook.SheetNames[i]
+
+        var csv = XLSX.utils.sheet_to_csv(workbook.Sheets[sheetName], {
+          FS: ',',
+          blankrows: false
+        });
+
+        //console.log(csv)
+        result.push(csv.trim())
+      }
+
+      result = result.join('\n')
+      result = result.split('\n').map(line => line.trim()).filter(line => (line !== '')).join('\n')
+
+      return result
+    },
+    tokenize: async function () {
+      //console.log(await this.utils.TokenizeUtils.tokenize('哈囉你好嗎？'))
       
+      this.config.loading = true
+      this.config.nlpMode = 'tokenization'
+      
+      let data = this.getInputRawData()
+      let headers = this.getInputRawHeaders()
+      
+      await this.$parent.$refs.PreprocessTextarea.tokenize(data, headers)
+      
+      this.config.loading = false
     }
   } 
 }

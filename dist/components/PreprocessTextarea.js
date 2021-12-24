@@ -242,6 +242,35 @@ let PreprocessTextarea = {
       
       //console.log(transList)
     },
+    tokenize: async function (data, headers) {
+      
+      let key = headers[0]
+      
+      let textList = data.map(item => {
+        return item[key]
+      })
+      
+      //console.log(textList)
+      //console.log(data)
+      //console.log(await this.utils.TransUtils.trans('哈囉你好嗎？'))
+      let transList = await this.utils.TokenizeUtils.tokenize(textList)
+      
+      // 組合
+      data.forEach((item, i) => {
+        item[key] = transList[i]
+      })
+      
+      this.config.PreprocessData = data
+      
+      //await this.utils.AsyncUtils.sleep()
+      setTimeout(() => {
+        this.next()
+      }, 500)
+      
+      //console.log(data)
+      
+      //console.log(transList)
+    },
     getPreprocessData () {
       if (this.config.PreprocessData) {
         return this.config.PreprocessData

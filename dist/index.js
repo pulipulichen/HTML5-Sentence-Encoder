@@ -32536,27 +32536,25 @@ if (location.href.startsWith('http://localhost:8383/')) {
   tokenize: async function (text) {
     
     this.init()
-    let key = generateKey(text)
+    let key = this.generateKey(text)
     if (this.cache[key]) {
       return this.cache[key]
     }
     
     let isArray = false
     if (Array.isArray(text)) {
-      text = text.join('\n')
+      text = 'message\n' + text.join('\n')
       isArray = true
     }
     
     //console.log(data)
-    let data = {
-      data: text
-    }
-    
+    let data = text
     
     let result = await api.send(url, data, {debug: false})
     
     if (isArray === true) {
       result = result.split('\n')
+      result.shift()
     }
     
     this.cache[key] = result
