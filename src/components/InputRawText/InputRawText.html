@@ -1,0 +1,53 @@
+<div class="InputRawText">
+  <div class="field">
+    <label for="InputRawText">
+      {{ $t('Input Raw Text') }}
+    </label>
+  </div>
+
+  <div class="three fields">
+    <div class="field">
+      <select v-model="loadDemo">
+        <option value="none">{{ $t('Select a demo') }}</option>
+        <option v-for="item in demoOptions"
+                v-bind:value="item.path">{{ $t(item.name) }}</option>
+      </select>
+    </div>
+    <div class="field">
+      <a class="ui fluid button">
+        <i class="save outline icon"></i>
+        {{ $t('SAVE') }}
+      </a>
+    </div>
+    <div class="field">
+      <a class="ui fluid button">
+        <i class="folder open outline icon" />
+        {{ $t('OEPN') }}
+      </a>
+    </div>
+
+  </div>
+
+  <div class="field">
+    <textarea 
+      class="input-raw-text-textarea"
+      id="InputRawText"
+      v-model="config.InputRawText"></textarea>
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+      <a class="ui fluid button">
+        {{ $t('TOKENIZATION') }}
+        <i class="arrow alternate circle right outline icon"></i>
+      </a>
+    </div>
+    <div class="field">
+      <a class="ui fluid button"
+         v-on:click="trans">
+        {{ $t('EMBEDDING') }}
+        <i class="arrow alternate circle right outline icon"></i>
+      </a>
+    </div>
+  </div>
+</div>

@@ -8,9 +8,22 @@ let config = {
   },
   viewportSize: {
   },
-  loading: false,
   inited: false,
   
+  // --------------------
+  nlpMode: null,
+  loading: false,
+  InputRawText: '',
+  
+  InputRawHeaders: [],
+  InputRawData: null,
+  InputRawChanged: false,
+  
+  PreprocessText: '',
+  PreprocessData: null,
+  PreprocessTextChanged: false,
+  
+  SentenceEmbedding: '',
 }
 
 import styleConfig from './styles/style.config.js'

@@ -11,6 +11,10 @@ if (location.href.startsWith('http://localhost:8383/')) {
 export default {
   cache: {},
   generateKey (text,lang) {
+    if (Array.isArray(text)) {
+      text = JSON.stringify(text)
+    }
+    
     return lang + ':' + text
   },
   /**
@@ -20,10 +24,24 @@ export default {
    * @returns {result}
    */
   trans: async function (text, lang = 'en') {
-    if (!text || typeof(text) !== 'string' || text.trim() === '') {
+    if (!text) {
       return false
     }
-    text = text.trim()
+    
+    if (Array.isArray(text) && (typeof(text[0]) !== 'string' || text[0].trim() === '')) {
+      return false
+    } 
+    else if (typeof(text) === 'string' && text.trim() === '') {
+      return false
+    }
+    
+    if (typeof(text) === 'string') {
+      text = text.trim()
+    }
+    else if (Array.isArray(text)) {
+      text = text.map(t => t.trim())
+    }
+      
     let key = this.generateKey(text, lang)
     if (this.cache[key]) {
       return this.cache[key]

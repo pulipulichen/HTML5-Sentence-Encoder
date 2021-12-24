@@ -5,20 +5,7 @@ let Index = {
   data () {    
     this.$i18n.locale = this.config.localConfig
     return {
-      demoOptions: [
-        {
-          path: './demo/qa-pet-fruit.csv',
-          name: 'Q&A Pet or Fruit'
-        }
-      ],
       
-      InputRawText: 'a',
-      InputTransText: 'b',
-      SentenceEmbedding: 'c',
-      
-      nlpMode: null,
-      
-      loadDemo: 'none'
     }
   },
   //  mounted () {},  // IndexMounted

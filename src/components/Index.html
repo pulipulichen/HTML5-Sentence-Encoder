@@ -15,97 +15,33 @@
   <div class="ui grid">
 
     <div class="six wide column">
-      <div class="field">
-        <label for="InputRawText">
-          {{ $t('Input Raw Text') }}
-        </label>
-      </div>
-
-      <div class="three fields">
-        <div class="field">
-          <select v-model="loadDemo">
-            <option value="none">{{ $t('Select a demo') }}</option>
-            <option v-for="item in demoOptions"
-                    v-bind:value="item.path">{{ $t(item.name) }}</option>
-          </select>
-        </div>
-        <div class="field">
-          <a class="ui fluid button">
-            <i class="save outline icon"></i>
-            {{ $t('SAVE') }}
-          </a>
-        </div>
-        <div class="field">
-          <a class="ui fluid button">
-            <i class="folder open outline icon" />
-            {{ $t('OEPN') }}
-          </a>
-        </div>
-        
-      </div>
-
-      <div class="field">
-        <textarea 
-          class="input-raw-text-textarea"
-          id="InputRawText"
-          v-model="InputRawText"></textarea>
-      </div>
+      <InputRawText 
+        ref="InputRawText"
+        v-bind:config="config"
+        v-bind:localConfig="localConfig"
+        v-bind:utils="utils">
+      </InputRawText>
       
-      <div class="two fields">
-        <div class="field">
-          <a class="ui fluid button">
-            {{ $t('TOKENIZATION') }}
-            <i class="arrow alternate circle right outline icon"></i>
-          </a>
-        </div>
-        <div class="field">
-          <a class="ui fluid button"
-             v-on:click="trans">
-            {{ $t('EMBEDDING') }}
-            <i class="arrow alternate circle right outline icon"></i>
-          </a>
-        </div>
-      </div>
     </div>
 
-
     <div class="five wide column">
-      <div class="field">
-        <label for="InputTransText">
-          {{ $t('Preprocess') }}
-          <template v-if="nlpMode === 'embedding'">
-            :
-            {{ $t('Translated') }}
-          </template>
-          <template v-if="nlpMode === 'tokenization'">
-            :
-            {{ $t('Tokenized') }}
-          </template>
-        </label>
-        <textarea 
-          v-html="InputTransText"
-          id="InputTransText"
-          class="input-trans-text-textarea"
-          readonly=""></textarea>
-      </div>
-      
-      <div class="field">
-        <a class="ui fluid button">
-          {{ $t('NEXT') }}
-          <i class="arrow alternate circle right outline icon"></i>
-        </a>
-      </div>
+      <PreprocessTextarea 
+        ref="PreprocessTextarea"
+        v-bind:config="config"
+        v-bind:localConfig="localConfig"
+        v-bind:utils="utils">
+      </PreprocessTextarea>
     </div>
 
     <div class="five wide column">
       <div class="field">
         <label for="SentenceEmbedding">
           {{ $t('Stucture Data') }}
-          <template v-if="nlpMode === 'embedding'">
+          <template v-if="config.nlpMode === 'embedding'">
             :
             {{ $t('Embedding') }}
           </template>
-          <template v-if="nlpMode === 'tokenization'">
+          <template v-if="config.nlpMode === 'tokenization'">
             :
             {{ $t('Word Vector') }}
           </template>
@@ -113,7 +49,7 @@
         <textarea 
           class="sentence-embedding-textarea"
           id="SentenceEmbedding"
-          v-html="SentenceEmbedding"></textarea>
+          v-html="config.SentenceEmbedding"></textarea>
       </div>
 
       <div class="field">

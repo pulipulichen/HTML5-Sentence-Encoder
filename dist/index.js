@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"components/LoadingOverlay":"components/LoadingOverlay","vendors/semantic-ui-niwsf":"vendors/semantic-ui-niwsf"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"components/LoadingOverlay":"components/LoadingOverlay","vendors/semantic-ui-niwsf":"vendors/semantic-ui-niwsf","vendors~components/InputRawText~components/PreprocessTextarea":"vendors~components/InputRawText~components/PreprocessTextarea","components/InputRawText":"components/InputRawText","components/PreprocessTextarea":"components/PreprocessTextarea"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -2086,7 +2086,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".Index .input-raw-text-textarea[data-v-82b7485c],\n.Index .input-trans-text-textarea[data-v-82b7485c],\n.Index .sentence-embedding-textarea[data-v-82b7485c] {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n}\n.Index .input-raw-text-textarea[data-v-82b7485c] {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n}\n.Index .input-trans-text-textarea[data-v-82b7485c] {\n  background-color: #DDD !important;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/Index.less?vue&type=style&index=0&id=82b7485c&lang=less&scoped=true&","Index.less"],"names":[],"mappings":"AAAA;;;EAKI,wCAAA;EACA,4CAAA;ACDJ;ADLA;EAWI,sCAAA;EACA,0CAAA;ACHJ;ADTA;EAgBI,iCAAA;ACJJ","file":"Index.less","sourcesContent":[".Index {\n  .input-raw-text-textarea,\n  .input-trans-text-textarea,\n  .sentence-embedding-textarea {\n    @height: calc(100vh - 10.6rem) !important;\n    height: @height;\n    max-height: @height;\n  }\n  \n  .input-raw-text-textarea {\n    @height: calc(100vh - 15rem) !important;\n    height: @height;\n    max-height: @height;\n  }\n\n  .input-trans-text-textarea {\n    background-color: #DDD !important;\n  }\n}\n\n  ",".Index .input-raw-text-textarea,\n.Index .input-trans-text-textarea,\n.Index .sentence-embedding-textarea {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n}\n.Index .input-raw-text-textarea {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n}\n.Index .input-trans-text-textarea {\n  background-color: #DDD !important;\n}\n"]}]);
+exports.push([module.i, ".Index .input-raw-text-textarea[data-v-82b7485c],\n.Index .input-trans-text-textarea[data-v-82b7485c],\n.Index .sentence-embedding-textarea[data-v-82b7485c] {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n}\n.Index .input-trans-text-textarea[data-v-82b7485c] {\n  background-color: #DDD !important;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/Index.less?vue&type=style&index=0&id=82b7485c&lang=less&scoped=true&","Index.less"],"names":[],"mappings":"AAAA;;;EAKI,wCAAA;EACA,4CAAA;ACDJ;ADLA;EAYI,iCAAA;ACJJ","file":"Index.less","sourcesContent":[".Index {\n  .input-raw-text-textarea,\n  .input-trans-text-textarea,\n  .sentence-embedding-textarea {\n    @height: calc(100vh - 10.6rem) !important;\n    height: @height;\n    max-height: @height;\n  }\n  \n  \n\n  .input-trans-text-textarea {\n    background-color: #DDD !important;\n  }\n}\n\n  ",".Index .input-raw-text-textarea,\n.Index .input-trans-text-textarea,\n.Index .sentence-embedding-textarea {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n}\n.Index .input-trans-text-textarea {\n  background-color: #DDD !important;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -18495,189 +18495,37 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "ui grid" }, [
-        _c("div", { staticClass: "six wide column" }, [
-          _c("div", { staticClass: "field" }, [
-            _c("label", { attrs: { for: "InputRawText" } }, [
-              _vm._v(
-                "\r\n          " +
-                  _vm._s(_vm.$t("Input Raw Text")) +
-                  "\r\n        "
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "three fields" }, [
-            _c("div", { staticClass: "field" }, [
-              _c(
-                "select",
-                {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.loadDemo,
-                      expression: "loadDemo",
-                    },
-                  ],
-                  on: {
-                    change: function ($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function (o) {
-                          return o.selected
-                        })
-                        .map(function (o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.loadDemo = $event.target.multiple
-                        ? $$selectedVal
-                        : $$selectedVal[0]
-                    },
-                  },
-                },
-                [
-                  _c("option", { attrs: { value: "none" } }, [
-                    _vm._v(_vm._s(_vm.$t("Select a demo"))),
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.demoOptions, function (item) {
-                    return _c("option", { domProps: { value: item.path } }, [
-                      _vm._v(_vm._s(_vm.$t(item.name))),
-                    ])
-                  }),
-                ],
-                2
-              ),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "field" }, [
-              _c("a", { staticClass: "ui fluid button" }, [
-                _c("i", { staticClass: "save outline icon" }),
-                _vm._v(
-                  "\r\n            " + _vm._s(_vm.$t("SAVE")) + "\r\n          "
-                ),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "field" }, [
-              _c("a", { staticClass: "ui fluid button" }, [
-                _c("i", { staticClass: "folder open outline icon" }),
-                _vm._v(
-                  "\r\n            " + _vm._s(_vm.$t("OEPN")) + "\r\n          "
-                ),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.InputRawText,
-                  expression: "InputRawText",
-                },
-              ],
-              staticClass: "input-raw-text-textarea",
-              attrs: { id: "InputRawText" },
-              domProps: { value: _vm.InputRawText },
-              on: {
-                input: function ($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.InputRawText = $event.target.value
-                },
+        _c(
+          "div",
+          { staticClass: "six wide column" },
+          [
+            _c("InputRawText", {
+              ref: "InputRawText",
+              attrs: {
+                config: _vm.config,
+                localConfig: _vm.localConfig,
+                utils: _vm.utils,
               },
             }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "two fields" }, [
-            _c("div", { staticClass: "field" }, [
-              _c("a", { staticClass: "ui fluid button" }, [
-                _vm._v(
-                  "\r\n            " +
-                    _vm._s(_vm.$t("TOKENIZATION")) +
-                    "\r\n            "
-                ),
-                _c("i", {
-                  staticClass: "arrow alternate circle right outline icon",
-                }),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "field" }, [
-              _c(
-                "a",
-                { staticClass: "ui fluid button", on: { click: _vm.trans } },
-                [
-                  _vm._v(
-                    "\r\n            " +
-                      _vm._s(_vm.$t("EMBEDDING")) +
-                      "\r\n            "
-                  ),
-                  _c("i", {
-                    staticClass: "arrow alternate circle right outline icon",
-                  }),
-                ]
-              ),
-            ]),
-          ]),
-        ]),
+          ],
+          1
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "five wide column" }, [
-          _c("div", { staticClass: "field" }, [
-            _c(
-              "label",
-              { attrs: { for: "InputTransText" } },
-              [
-                _vm._v(
-                  "\r\n          " +
-                    _vm._s(_vm.$t("Preprocess")) +
-                    "\r\n          "
-                ),
-                _vm.nlpMode === "embedding"
-                  ? [
-                      _vm._v(
-                        "\r\n            :\r\n            " +
-                          _vm._s(_vm.$t("Translated")) +
-                          "\r\n          "
-                      ),
-                    ]
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.nlpMode === "tokenization"
-                  ? [
-                      _vm._v(
-                        "\r\n            :\r\n            " +
-                          _vm._s(_vm.$t("Tokenized")) +
-                          "\r\n          "
-                      ),
-                    ]
-                  : _vm._e(),
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _c("textarea", {
-              staticClass: "input-trans-text-textarea",
-              attrs: { id: "InputTransText", readonly: "" },
-              domProps: { innerHTML: _vm._s(_vm.InputTransText) },
+        _c(
+          "div",
+          { staticClass: "five wide column" },
+          [
+            _c("PreprocessTextarea", {
+              ref: "PreprocessTextarea",
+              attrs: {
+                config: _vm.config,
+                localConfig: _vm.localConfig,
+                utils: _vm.utils,
+              },
             }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("a", { staticClass: "ui fluid button" }, [
-              _vm._v(
-                "\r\n          " + _vm._s(_vm.$t("NEXT")) + "\r\n          "
-              ),
-              _c("i", {
-                staticClass: "arrow alternate circle right outline icon",
-              }),
-            ]),
-          ]),
-        ]),
+          ],
+          1
+        ),
         _vm._v(" "),
         _c("div", { staticClass: "five wide column" }, [
           _c("div", { staticClass: "field" }, [
@@ -18690,7 +18538,7 @@ var render = function () {
                     _vm._s(_vm.$t("Stucture Data")) +
                     "\r\n          "
                 ),
-                _vm.nlpMode === "embedding"
+                _vm.config.nlpMode === "embedding"
                   ? [
                       _vm._v(
                         "\r\n            :\r\n            " +
@@ -18700,7 +18548,7 @@ var render = function () {
                     ]
                   : _vm._e(),
                 _vm._v(" "),
-                _vm.nlpMode === "tokenization"
+                _vm.config.nlpMode === "tokenization"
                   ? [
                       _vm._v(
                         "\r\n            :\r\n            " +
@@ -18716,7 +18564,7 @@ var render = function () {
             _c("textarea", {
               staticClass: "sentence-embedding-textarea",
               attrs: { id: "SentenceEmbedding" },
-              domProps: { innerHTML: _vm._s(_vm.SentenceEmbedding) },
+              domProps: { innerHTML: _vm._s(_vm.config.SentenceEmbedding) },
             }),
           ]),
           _vm._v(" "),
@@ -31301,20 +31149,7 @@ let Index = {
   data () {    
     this.$i18n.locale = this.config.localConfig
     return {
-      demoOptions: [
-        {
-          path: './demo/qa-pet-fruit.csv',
-          name: 'Q&A Pet or Fruit'
-        }
-      ],
       
-      InputRawText: 'a',
-      InputTransText: 'b',
-      SentenceEmbedding: 'c',
-      
-      nlpMode: null,
-      
-      loadDemo: 'none'
     }
   },
   //  mounted () {},  // IndexMounted
@@ -31448,7 +31283,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
   Index.components = {
     LoadingOverlay: () => {return __webpack_require__.e(/*! import() | components/LoadingOverlay */ "components/LoadingOverlay").then(__webpack_require__.bind(null, /*! ./LoadingOverlay/LoadingOverlay.vue */ "./src/components/LoadingOverlay/LoadingOverlay.vue"))},
-    
+    InputRawText: () => {return Promise.all(/*! import() | components/InputRawText */[__webpack_require__.e("vendors~components/InputRawText~components/PreprocessTextarea"), __webpack_require__.e("components/InputRawText")]).then(__webpack_require__.bind(null, /*! ./InputRawText/InputRawText.vue */ "./src/components/InputRawText/InputRawText.vue"))},
+    PreprocessTextarea: () => {return Promise.all(/*! import() | components/PreprocessTextarea */[__webpack_require__.e("vendors~components/InputRawText~components/PreprocessTextarea"), __webpack_require__.e("components/PreprocessTextarea")]).then(__webpack_require__.bind(null, /*! ./PreprocessTextarea/PreprocessTextarea.vue */ "./src/components/PreprocessTextarea/PreprocessTextarea.vue"))},
   }
 });
 
@@ -31484,17 +31320,7 @@ __webpack_require__.r(__webpack_exports__);
 //import IndexMethodsDictionary from './IndexMethodsDictionary.js'
 
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
-  Index.methods.startToLoadDemo = async function (path) {
-    if (!path) {
-      return ''
-    }
-    
-    return await this.utils.AxiosUtils.get(path)
-  }
   
-  Index.methods.trans = async function () {
-    
-  }
 });
 
 /***/ }),
@@ -31528,15 +31354,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
   Index.watch = {
-    loadDemo: async function () {
-      if (this.loadDemo === 'none') {
-        return false
-      }
-      
-      this.InputRawText = await this.startToLoadDemo(this.loadDemo)
-      
-      this.loadDemo = 'none'
-    }
+    
 //    recognitionAbort() {
 //      if (this.recognitionAbort === true) {
 //        this.recognition.abort()
@@ -31576,9 +31394,22 @@ let config = {
   },
   viewportSize: {
   },
-  loading: false,
   inited: false,
   
+  // --------------------
+  nlpMode: null,
+  loading: false,
+  InputRawText: '',
+  
+  InputRawHeaders: [],
+  InputRawData: null,
+  InputRawChanged: false,
+  
+  PreprocessText: '',
+  PreprocessData: null,
+  PreprocessTextChanged: false,
+  
+  SentenceEmbedding: '',
 }
 
 
@@ -32657,6 +32488,10 @@ if (location.href.startsWith('http://localhost:8383/')) {
 /* harmony default export */ __webpack_exports__["default"] = ({
   cache: {},
   generateKey (text,lang) {
+    if (Array.isArray(text)) {
+      text = JSON.stringify(text)
+    }
+    
     return lang + ':' + text
   },
   /**
@@ -32666,10 +32501,24 @@ if (location.href.startsWith('http://localhost:8383/')) {
    * @returns {result}
    */
   trans: async function (text, lang = 'en') {
-    if (!text || typeof(text) !== 'string' || text.trim() === '') {
+    if (!text) {
       return false
     }
-    text = text.trim()
+    
+    if (Array.isArray(text) && (typeof(text[0]) !== 'string' || text[0].trim() === '')) {
+      return false
+    } 
+    else if (typeof(text) === 'string' && text.trim() === '') {
+      return false
+    }
+    
+    if (typeof(text) === 'string') {
+      text = text.trim()
+    }
+    else if (Array.isArray(text)) {
+      text = text.map(t => t.trim())
+    }
+      
     let key = this.generateKey(text, lang)
     if (this.cache[key]) {
       return this.cache[key]
