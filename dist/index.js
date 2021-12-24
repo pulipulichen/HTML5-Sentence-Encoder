@@ -31369,6 +31369,7 @@ let config = {
   
   InputRawHeaders: [],
   InputRawData: null,
+  InputRawArray: null,
   InputRawChanged: false,
   
   PreprocessText: '',
@@ -32230,7 +32231,28 @@ __webpack_require__.r(__webpack_exports__);
     document.body.removeChild(element);
 
     return true
-  }
+  },
+  downloadODS: function (filename, array) {
+    //console.log(window.XLSX)
+    var wb = XLSX.utils.book_new();
+    console.log(array)
+    wb.SheetNames.push("data")
+    wb.Sheets["data"] = XLSX.utils.aoa_to_sheet(array)
+
+    var wbout = XLSX.write(wb, {bookType: 'ods', type: 'binary'})
+    if (!filename.endsWith('.ods')) {
+      filename = filename + '.ods'
+    }
+    
+    saveAs(new Blob([this.s2ab(wbout)], {type: "application/octet-stream"}), filename);
+  },
+  s2ab(s) {
+    var buf = new ArrayBuffer(s.length); //convert s to arrayBuffer
+    var view = new Uint8Array(buf);  //create uint8array as viewer
+    for (var i = 0; i < s.length; i++)
+      view[i] = s.charCodeAt(i) & 0xFF; //convert to octet
+    return buf;
+  },
 });
 
 /***/ }),
@@ -32478,6 +32500,75 @@ const md = new MobileDetect(window.navigator.userAgent)
     }
     
     return words.join(' ')
+  }
+});
+
+/***/ }),
+
+/***/ "./src/utils/TokenizeUtils.js":
+/*!************************************!*\
+  !*** ./src/utils/TokenizeUtils.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _puli_post_message_api_puli_post_message_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./puli-post-message-api/puli-post-message-api.js */ "./src/utils/puli-post-message-api/puli-post-message-api.js");
+
+
+let inited = false
+let api
+
+let url = 'https://pulipulichen.github.io/jieba-js/'
+if (location.href.startsWith('http://localhost:8383/')) {
+  url = 'http://localhost:8383/jieba-js/index.html'
+}
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  cache: {},
+  generateKey (text) {
+    if (Array.isArray(text)) {
+      text = JSON.stringify(text)
+    }
+    return 'token-' + text
+  },
+  tokenize: async function (text) {
+    
+    this.init()
+    let key = generateKey(text)
+    if (this.cache[key]) {
+      return this.cache[key]
+    }
+    
+    let isArray = false
+    if (Array.isArray(text)) {
+      text = text.join('\n')
+      isArray = true
+    }
+    
+    //console.log(data)
+    let data = {
+      data: text
+    }
+    
+    
+    let result = await api.send(url, data, {debug: false})
+    
+    if (isArray === true) {
+      result = result.split('\n')
+    }
+    
+    this.cache[key] = result
+    return result
+  },
+  init () {
+    if (inited === true) {
+      return true
+    }
+    
+    api = Object(_puli_post_message_api_puli_post_message_api_js__WEBPACK_IMPORTED_MODULE_0__["default"])()
+    inited = true
   }
 });
 
@@ -33247,6 +33338,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TransUtils_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./TransUtils.js */ "./src/utils/TransUtils.js");
 /* harmony import */ var _RandomUtils_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./RandomUtils.js */ "./src/utils/RandomUtils.js");
 /* harmony import */ var _ClassifyUtils_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ClassifyUtils.js */ "./src/utils/ClassifyUtils.js");
+/* harmony import */ var _TokenizeUtils_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./TokenizeUtils.js */ "./src/utils/TokenizeUtils.js");
 
 
 
@@ -33258,6 +33350,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //import TextToSpeechUtils from './TextToSpeechUtils.js'
+
 
 
 
@@ -33277,7 +33370,8 @@ __webpack_require__.r(__webpack_exports__);
   SoundUtils: _SoundUtils_js__WEBPACK_IMPORTED_MODULE_9__["default"],
   TransUtils: _TransUtils_js__WEBPACK_IMPORTED_MODULE_10__["default"],
   RandomUtils: _RandomUtils_js__WEBPACK_IMPORTED_MODULE_11__["default"],
-  ClassifyUtils: _ClassifyUtils_js__WEBPACK_IMPORTED_MODULE_12__["default"]
+  ClassifyUtils: _ClassifyUtils_js__WEBPACK_IMPORTED_MODULE_12__["default"],
+  TokenizeUtils: _TokenizeUtils_js__WEBPACK_IMPORTED_MODULE_13__["default"]
 });
 
 /***/ })

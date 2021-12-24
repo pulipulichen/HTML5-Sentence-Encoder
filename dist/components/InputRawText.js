@@ -27,7 +27,7 @@ module.exports = function (Component) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".input-raw-text-textarea[data-v-3399dfa2] {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/InputRawText/InputRawText.less?vue&type=style&index=0&id=3399dfa2&lang=less&scoped=true&","InputRawText.less"],"names":[],"mappings":"AAAA;EAEE,sCAAA;EACA,0CAAA;EAEA,gBAAA;EACA,qBAAA;EACA,gBAAA;ACDF","file":"InputRawText.less","sourcesContent":[".input-raw-text-textarea {\n  @height: calc(100vh - 15rem) !important;\n  height: @height;\n  max-height: @height;\n  \n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}",".input-raw-text-textarea {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\n"]}]);
+exports.push([module.i, ".input-raw-text-textarea[data-v-3399dfa2] {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\ninput[type=\"file\"][data-v-3399dfa2] {\n  display: none;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/InputRawText/InputRawText.less?vue&type=style&index=0&id=3399dfa2&lang=less&scoped=true&","InputRawText.less"],"names":[],"mappings":"AAAA;EAEE,sCAAA;EACA,0CAAA;EAEA,gBAAA;EACA,qBAAA;EACA,gBAAA;ACDF;ADIA;EACE,aAAA;ACFF","file":"InputRawText.less","sourcesContent":[".input-raw-text-textarea {\n  @height: calc(100vh - 15rem) !important;\n  height: @height;\n  max-height: @height;\n  \n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\n\ninput[type=\"file\"] {\n  display: none;\n}",".input-raw-text-textarea {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\ninput[type=\"file\"] {\n  display: none;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -101,17 +101,35 @@ var render = function () {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "field" }, [
-        _c("a", { staticClass: "ui fluid button" }, [
+        _c("a", { staticClass: "ui fluid button", on: { click: _vm.save } }, [
           _c("i", { staticClass: "save outline icon" }),
           _vm._v("\n        " + _vm._s(_vm.$t("SAVE")) + "\n      "),
         ]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "field" }, [
-        _c("a", { staticClass: "ui fluid button" }, [
-          _c("i", { staticClass: "folder open outline icon" }),
-          _vm._v("\n        " + _vm._s(_vm.$t("OEPN")) + "\n      "),
-        ]),
+        _c(
+          "button",
+          {
+            staticClass: "ui fluid button",
+            on: {
+              click: function ($event) {
+                return _vm.$refs.InputConfigFileTrigger.click()
+              },
+            },
+          },
+          [
+            _c("i", { staticClass: "folder open outline icon" }),
+            _vm._v("\n        " + _vm._s(_vm.$t("OEPN")) + "\n      "),
+          ]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          ref: "InputConfigFileTrigger",
+          staticClass: "input-field",
+          attrs: { type: "file", id: "input_config_file", accept: ".csv" },
+          on: { change: _vm.openSourceFile },
+        }),
       ]),
     ]),
     _vm._v(" "),
@@ -258,6 +276,7 @@ let InputRawText = {
     'config.InputRawText' () {
       this.config.InputRawHeaders = []
       this.config.InputRawData = null
+      this.config.InputRawArray = null
     }
   },
   computed: {
@@ -271,7 +290,7 @@ let InputRawText = {
       await this.utils.AsyncUtils.sleep()
       this.loadDemo = this.demoOptions[0].path
       await this.utils.AsyncUtils.sleep()
-      this.trans()
+      //this.trans()
     },
     startToLoadDemo: async function (path) {
       if (!path) {
@@ -291,6 +310,17 @@ let InputRawText = {
       })
       this.config.InputRawData = dataResult.data
       return this.config.InputRawData
+    },
+    getInputRawArray: function () {
+      if (this.config.InputRawArray) {
+        return this.config.InputRawArray
+      }
+      
+      let dataResult = Papa.parse(this.config.InputRawText, {
+        skipEmptyLines: true
+      })
+      this.config.InputRawArray = dataResult.data
+      return this.config.InputRawArray
     },
     getInputRawHeaders: function () {
       if (this.config.InputRawHeaders && this.config.InputRawHeaders.length > 0) {
@@ -316,8 +346,19 @@ let InputRawText = {
       
       
       this.config.loading = false
+    },
+    save () {
+      let filename = 'sentence-encode'
+        + '-' 
+        + (new Date()).mmddhhmm()
+      //this.utils.FileUtils.download(filename, this.config.InputRawText)
+      
+      this.utils.FileUtils.downloadODS(filename, this.getInputRawArray())
+    },
+    openSourceFile () {
+      
     }
-  }
+  } 
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (InputRawText);

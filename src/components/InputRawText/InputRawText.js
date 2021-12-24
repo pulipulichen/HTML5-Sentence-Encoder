@@ -30,6 +30,7 @@ let InputRawText = {
     'config.InputRawText' () {
       this.config.InputRawHeaders = []
       this.config.InputRawData = null
+      this.config.InputRawArray = null
     }
   },
   computed: {
@@ -43,7 +44,7 @@ let InputRawText = {
       await this.utils.AsyncUtils.sleep()
       this.loadDemo = this.demoOptions[0].path
       await this.utils.AsyncUtils.sleep()
-      this.trans()
+      //this.trans()
     },
     startToLoadDemo: async function (path) {
       if (!path) {
@@ -63,6 +64,17 @@ let InputRawText = {
       })
       this.config.InputRawData = dataResult.data
       return this.config.InputRawData
+    },
+    getInputRawArray: function () {
+      if (this.config.InputRawArray) {
+        return this.config.InputRawArray
+      }
+      
+      let dataResult = Papa.parse(this.config.InputRawText, {
+        skipEmptyLines: true
+      })
+      this.config.InputRawArray = dataResult.data
+      return this.config.InputRawArray
     },
     getInputRawHeaders: function () {
       if (this.config.InputRawHeaders && this.config.InputRawHeaders.length > 0) {
@@ -88,8 +100,19 @@ let InputRawText = {
       
       
       this.config.loading = false
+    },
+    save () {
+      let filename = 'sentence-encode'
+        + '-' 
+        + (new Date()).mmddhhmm()
+      //this.utils.FileUtils.download(filename, this.config.InputRawText)
+      
+      this.utils.FileUtils.downloadODS(filename, this.getInputRawArray())
+    },
+    openSourceFile () {
+      
     }
-  }
+  } 
 }
 
 export default InputRawText

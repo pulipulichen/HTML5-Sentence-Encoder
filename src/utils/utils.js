@@ -14,6 +14,7 @@ import TransUtils from './TransUtils.js'
 import RandomUtils from './RandomUtils.js'
 
 import ClassifyUtils from './ClassifyUtils.js'
+import TokenizeUtils from './TokenizeUtils.js'
 
 export default {
   AsyncUtils,
@@ -28,5 +29,6 @@ export default {
   SoundUtils,
   TransUtils,
   RandomUtils,
-  ClassifyUtils
+  ClassifyUtils,
+  TokenizeUtils
 }

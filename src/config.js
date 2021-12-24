@@ -17,6 +17,7 @@ let config = {
   
   InputRawHeaders: [],
   InputRawData: null,
+  InputRawArray: null,
   InputRawChanged: false,
   
   PreprocessText: '',

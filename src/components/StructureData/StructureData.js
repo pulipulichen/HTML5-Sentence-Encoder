@@ -105,8 +105,7 @@ let StructureData = {
       let filename = this.config.nlpMode 
         + '-' 
         + (new Date()).mmddhhmm()
-        + '.csv'
-      this.utils.FileUtils.download(filename, this.config.StructureText)
+      this.utils.FileUtils.downloadODS(filename, this.config.StructureArray)
     },
     classify () {
       console.log(this.config.StructureArray)
