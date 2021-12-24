@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"components/LoadingOverlay":"components/LoadingOverlay","components/StructureData":"components/StructureData","vendors/semantic-ui-niwsf":"vendors/semantic-ui-niwsf","vendors~components/InputRawText~components/PreprocessTextarea":"vendors~components/InputRawText~components/PreprocessTextarea","components/InputRawText":"components/InputRawText","components/PreprocessTextarea":"components/PreprocessTextarea"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"components/LoadingOverlay":"components/LoadingOverlay","vendors/semantic-ui-niwsf":"vendors/semantic-ui-niwsf","vendors~components/InputRawText~components/PreprocessTextarea~components/StructureData":"vendors~components/InputRawText~components/PreprocessTextarea~components/StructureData","components/InputRawText":"components/InputRawText","components/PreprocessTextarea":"components/PreprocessTextarea","components/StructureData":"components/StructureData"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -31248,9 +31248,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (Index) {
   Index.components = {
     LoadingOverlay: () => {return __webpack_require__.e(/*! import() | components/LoadingOverlay */ "components/LoadingOverlay").then(__webpack_require__.bind(null, /*! ./LoadingOverlay/LoadingOverlay.vue */ "./src/components/LoadingOverlay/LoadingOverlay.vue"))},
-    InputRawText: () => {return Promise.all(/*! import() | components/InputRawText */[__webpack_require__.e("vendors~components/InputRawText~components/PreprocessTextarea"), __webpack_require__.e("components/InputRawText")]).then(__webpack_require__.bind(null, /*! ./InputRawText/InputRawText.vue */ "./src/components/InputRawText/InputRawText.vue"))},
-    PreprocessTextarea: () => {return Promise.all(/*! import() | components/PreprocessTextarea */[__webpack_require__.e("vendors~components/InputRawText~components/PreprocessTextarea"), __webpack_require__.e("components/PreprocessTextarea")]).then(__webpack_require__.bind(null, /*! ./PreprocessTextarea/PreprocessTextarea.vue */ "./src/components/PreprocessTextarea/PreprocessTextarea.vue"))},
-    StructureData: () => {return __webpack_require__.e(/*! import() | components/StructureData */ "components/StructureData").then(__webpack_require__.bind(null, /*! ./StructureData/StructureData.vue */ "./src/components/StructureData/StructureData.vue"))},
+    InputRawText: () => {return Promise.all(/*! import() | components/InputRawText */[__webpack_require__.e("vendors~components/InputRawText~components/PreprocessTextarea~components/StructureData"), __webpack_require__.e("components/InputRawText")]).then(__webpack_require__.bind(null, /*! ./InputRawText/InputRawText.vue */ "./src/components/InputRawText/InputRawText.vue"))},
+    PreprocessTextarea: () => {return Promise.all(/*! import() | components/PreprocessTextarea */[__webpack_require__.e("vendors~components/InputRawText~components/PreprocessTextarea~components/StructureData"), __webpack_require__.e("components/PreprocessTextarea")]).then(__webpack_require__.bind(null, /*! ./PreprocessTextarea/PreprocessTextarea.vue */ "./src/components/PreprocessTextarea/PreprocessTextarea.vue"))},
+    StructureData: () => {return Promise.all(/*! import() | components/StructureData */[__webpack_require__.e("vendors~components/InputRawText~components/PreprocessTextarea~components/StructureData"), __webpack_require__.e("components/StructureData")]).then(__webpack_require__.bind(null, /*! ./StructureData/StructureData.vue */ "./src/components/StructureData/StructureData.vue"))},
   }
 });
 
@@ -31378,6 +31378,7 @@ let config = {
   
   StructureText: '',
   StructureData: null,
+  StructureHeaders: [],
 }
 
 

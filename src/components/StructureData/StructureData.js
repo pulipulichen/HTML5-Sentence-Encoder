@@ -1,4 +1,5 @@
 /* global use */
+const Papa = require('papaparse')
 
 let StructureData = {
   props: ['config', 'localConfig', 'utils'],
@@ -12,6 +13,22 @@ let StructureData = {
     'localConfig.locale'() {
       this.$i18n.locale = this.localConfig.locale;
     },
+    'config.StructureText' (newText, oldText) {
+      if (oldText === '') {
+        return false
+      }
+      
+      this.config.StructureData = null
+      this.config.StructureHeaders = null
+    },
+    'config.StructureData' () {
+      if (this.config.StructureData === null) {
+        return false
+      }
+      //console.log(this.config.StructureData)
+      this.config.StructureText = Papa.unparse(this.config.StructureData)
+      //console.log(this.config.PreprocessText)
+    }
   },
   computed: {
     
@@ -49,13 +66,26 @@ let StructureData = {
     buildStructureData: async function (data, headers) {
       
       let key = headers[0]
-      console.log(headers)
+      //console.log(headers)
       let input = data.map(item => item[key])
-      console.log(input)
-      let embedding = await this.parseSentenceEmbedding(input)
-      console.log(embedding)
-      window.E = embedding
-      console.log('buildStructureData')
+      //console.log(input)
+      let embeddingList = await this.parseSentenceEmbedding(input)
+      //console.log(embedding)
+      //window.E = embedding
+      //console.log('buildStructureData')
+      
+      this.config.StructureData = data.map((item, i) => {
+        let embeddingItem = {}
+        let embedding = embeddingList[i]
+        
+        embedding.forEach((e, j) => {
+          embeddingItem[key + j] = e
+        })
+        
+        embeddingItem[headers[1]] = item[headers[1]]
+        
+        return embeddingItem
+      })
     },
     copy () {
       

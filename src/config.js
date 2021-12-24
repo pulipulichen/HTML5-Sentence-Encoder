@@ -26,6 +26,7 @@ let config = {
   
   StructureText: '',
   StructureData: null,
+  StructureHeaders: [],
 }
 
 import styleConfig from './styles/style.config.js'

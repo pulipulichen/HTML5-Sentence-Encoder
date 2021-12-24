@@ -236,7 +236,7 @@ let InputRawText = {
       loadDemo: 'none',
       demoOptions: [
         {
-          path: './demo/qa-pet-fruit.csv',
+          path: './demo/qa-pet-fruit8.csv',
           name: 'Q&A Pet or Fruit'
         }
       ],
