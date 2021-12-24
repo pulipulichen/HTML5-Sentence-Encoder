@@ -13,6 +13,8 @@ import SoundUtils from './SoundUtils.js'
 import TransUtils from './TransUtils.js'
 import RandomUtils from './RandomUtils.js'
 
+import ClassifyUtils from './ClassifyUtils.js'
+
 export default {
   AsyncUtils,
   DiffUtils,
@@ -25,5 +27,6 @@ export default {
   //TextToSpeechUtils,
   SoundUtils,
   TransUtils,
-  RandomUtils
+  RandomUtils,
+  ClassifyUtils
 }

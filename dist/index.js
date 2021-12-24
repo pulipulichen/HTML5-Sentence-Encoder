@@ -31378,6 +31378,7 @@ let config = {
   
   StructureText: '',
   StructureData: null,
+  StructureArray: null,
   StructureHeaders: [],
 }
 
@@ -32013,6 +32014,52 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/utils/ClassifyUtils.js":
+/*!************************************!*\
+  !*** ./src/utils/ClassifyUtils.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _puli_post_message_api_puli_post_message_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./puli-post-message-api/puli-post-message-api.js */ "./src/utils/puli-post-message-api/puli-post-message-api.js");
+
+let inited = false
+let api
+
+//let url = 'https://pulipulichen.github.io/HTML-Simple-Classifier/index.html?api=1'
+let url = 'http://localhost:8383/HTML-Simple-Classifier/index.html?api=1'
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  openClassifier: async function (rawData, config = {}) {
+    
+    this.init()
+    
+    //console.log(data)
+    let data = {
+      rawData,
+      config
+    }
+    
+    api.send(url, data, {
+      mode: 'popup',
+      newWindow: true,
+      features: 0.8
+    })
+  },
+  init () {
+    if (inited === true) {
+      return true
+    }
+    
+    api = Object(_puli_post_message_api_puli_post_message_api_js__WEBPACK_IMPORTED_MODULE_0__["default"])()
+    inited = true
+  }
+});
+
+/***/ }),
+
 /***/ "./src/utils/ClipboardUtils.js":
 /*!*************************************!*\
   !*** ./src/utils/ClipboardUtils.js ***!
@@ -32593,9 +32640,12 @@ Date.prototype.mmdd = function() {
 __webpack_require__.r(__webpack_exports__);
 window.PuliPostMessageAPIInited = false
 
+let cacheAPI = null
+
 function PuliPostMessageAPI(options) {
   if (window.PuliPostMessageAPIInited === true) {
-    throw new Error('PuliPostMessageAPI was loaded.')
+    //throw new Error('PuliPostMessageAPI was loaded.')
+    return cacheAPI
   }
   window.PuliPostMessageAPIInited = true
   
@@ -33158,12 +33208,14 @@ function PuliPostMessageAPI(options) {
   
   // -------------------------------
   
-  return {
+  cacheAPI = {
     send: send,
     addReceiveListener: addReceiveListener,
     removeReceiveListener: removeReceiveListener,
     ready: ready
   }
+  
+  return cacheAPI
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (PuliPostMessageAPI);
@@ -33192,6 +33244,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SoundUtils_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./SoundUtils.js */ "./src/utils/SoundUtils.js");
 /* harmony import */ var _TransUtils_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./TransUtils.js */ "./src/utils/TransUtils.js");
 /* harmony import */ var _RandomUtils_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./RandomUtils.js */ "./src/utils/RandomUtils.js");
+/* harmony import */ var _ClassifyUtils_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ClassifyUtils.js */ "./src/utils/ClassifyUtils.js");
 
 
 
@@ -33203,6 +33256,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //import TextToSpeechUtils from './TextToSpeechUtils.js'
+
+
 
 
 
@@ -33219,7 +33274,8 @@ __webpack_require__.r(__webpack_exports__);
   //TextToSpeechUtils,
   SoundUtils: _SoundUtils_js__WEBPACK_IMPORTED_MODULE_9__["default"],
   TransUtils: _TransUtils_js__WEBPACK_IMPORTED_MODULE_10__["default"],
-  RandomUtils: _RandomUtils_js__WEBPACK_IMPORTED_MODULE_11__["default"]
+  RandomUtils: _RandomUtils_js__WEBPACK_IMPORTED_MODULE_11__["default"],
+  ClassifyUtils: _ClassifyUtils_js__WEBPACK_IMPORTED_MODULE_12__["default"]
 });
 
 /***/ })

@@ -27,6 +27,13 @@ let StructureData = {
       }
       //console.log(this.config.StructureData)
       this.config.StructureText = Papa.unparse(this.config.StructureData)
+      this.config.StructureArray = this.config.StructureData.map(row => {
+        return Object.keys(row).map(key => row[key])
+      })
+      //console.log(this.config.StructureArray)
+      
+      this.config.StructureArray.unshift(Object.keys(this.config.StructureData[0]))
+      //console.log(this.config.StructureArray)
       //console.log(this.config.PreprocessText)
     }
   },
@@ -102,7 +109,10 @@ let StructureData = {
       this.utils.FileUtils.download(filename, this.config.StructureText)
     },
     classify () {
-      
+      console.log(this.config.StructureArray)
+      this.utils.ClassifyUtils.openClassifier(this.config.StructureArray, {
+        classifier: 'KNearestNeighbors'
+      })
     }
   }
 }

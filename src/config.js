@@ -26,6 +26,7 @@ let config = {
   
   StructureText: '',
   StructureData: null,
+  StructureArray: null,
   StructureHeaders: [],
 }
 

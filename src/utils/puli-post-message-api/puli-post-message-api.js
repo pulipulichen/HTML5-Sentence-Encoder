@@ -1,8 +1,11 @@
 window.PuliPostMessageAPIInited = false
 
+let cacheAPI = null
+
 function PuliPostMessageAPI(options) {
   if (window.PuliPostMessageAPIInited === true) {
-    throw new Error('PuliPostMessageAPI was loaded.')
+    //throw new Error('PuliPostMessageAPI was loaded.')
+    return cacheAPI
   }
   window.PuliPostMessageAPIInited = true
   
@@ -565,12 +568,14 @@ function PuliPostMessageAPI(options) {
   
   // -------------------------------
   
-  return {
+  cacheAPI = {
     send: send,
     addReceiveListener: addReceiveListener,
     removeReceiveListener: removeReceiveListener,
     ready: ready
   }
+  
+  return cacheAPI
 }
 
 export default PuliPostMessageAPI
