@@ -12,14 +12,14 @@
           </template>
         </label>
         <textarea 
-          v-html="config.PreprocessText"
+          v-model="config.PreprocessText"
           id="InputTransText"
-          class="input-trans-text-textarea"
-          readonly=""></textarea>
+          class="input-trans-text-textarea"></textarea>
       </div>
       
       <div class="field">
-        <a class="ui fluid button">
+        <a class="ui fluid button"
+           v-on:click="next">
           {{ $t('NEXT') }}
           <i class="arrow alternate circle right outline icon"></i>
         </a>

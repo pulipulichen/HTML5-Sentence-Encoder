@@ -82,14 +82,30 @@ var render = function () {
       ),
       _vm._v(" "),
       _c("textarea", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.config.PreprocessText,
+            expression: "config.PreprocessText",
+          },
+        ],
         staticClass: "input-trans-text-textarea",
-        attrs: { id: "InputTransText", readonly: "" },
-        domProps: { innerHTML: _vm._s(_vm.config.PreprocessText) },
+        attrs: { id: "InputTransText" },
+        domProps: { value: _vm.config.PreprocessText },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.config, "PreprocessText", $event.target.value)
+          },
+        },
       }),
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "field" }, [
-      _c("a", { staticClass: "ui fluid button" }, [
+      _c("a", { staticClass: "ui fluid button", on: { click: _vm.next } }, [
         _vm._v("\n          " + _vm._s(_vm.$t("NEXT")) + "\n          "),
         _c("i", { staticClass: "arrow alternate circle right outline icon" }),
       ]),
@@ -165,7 +181,19 @@ let PreprocessTextarea = {
     'localConfig.locale'() {
       this.$i18n.locale = this.localConfig.locale;
     },
+    'config.PreprocessText' (newText, oldText) {
+      if (oldText === '') {
+        return false
+      }
+      
+      this.config.PreprocessData = null
+      this.config.PreprocessHeaders = null
+    },
     'config.PreprocessData' () {
+      if (this.config.PreprocessData === null) {
+        return false
+      }
+      
       this.config.PreprocessText = Papa.unparse(this.config.PreprocessData)
     }
   },
@@ -196,9 +224,41 @@ let PreprocessTextarea = {
       
       this.config.PreprocessData = data
       
+      this.next()
       //console.log(data)
       
       //console.log(transList)
+    },
+    getPreprocessData () {
+      if (this.config.PreprocessData) {
+        return this.config.PreprocessData
+      }
+      
+      let dataResult = Papa.parse(this.config.PreprocessText, {
+        header: true,
+        skipEmptyLines: true
+      })
+      this.config.PreprocessData = dataResult.data
+      return this.config.PreprocessData
+    },
+    getPreprocessHeaders () {
+      if (this.config.PreprocessHeaders) {
+        return this.config.PreprocessHeaders
+      }
+      
+      let headersResult = Papa.parse(this.config.PreprocessText, {
+        header: false,
+        preview: 1
+      })
+      this.config.PreprocessHeaders = headersResult.data[0]
+      
+      return this.config.PreprocessHeaders
+    },
+    next () {
+      let data = this.getPreprocessData()
+      let headers = this.getPreprocessHeaders()
+      
+      this.$parent.$refs.StructureData.buildStructureData(data, headers)
     }
   }
 }

@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"components/LoadingOverlay":"components/LoadingOverlay","vendors/semantic-ui-niwsf":"vendors/semantic-ui-niwsf","vendors~components/InputRawText~components/PreprocessTextarea":"vendors~components/InputRawText~components/PreprocessTextarea","components/InputRawText":"components/InputRawText","components/PreprocessTextarea":"components/PreprocessTextarea"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"components/LoadingOverlay":"components/LoadingOverlay","components/StructureData":"components/StructureData","vendors/semantic-ui-niwsf":"vendors/semantic-ui-niwsf","vendors~components/InputRawText~components/PreprocessTextarea":"vendors~components/InputRawText~components/PreprocessTextarea","components/InputRawText":"components/InputRawText","components/PreprocessTextarea":"components/PreprocessTextarea"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -18527,56 +18527,21 @@ var render = function () {
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "five wide column" }, [
-          _c("div", { staticClass: "field" }, [
-            _c(
-              "label",
-              { attrs: { for: "SentenceEmbedding" } },
-              [
-                _vm._v(
-                  "\r\n          " +
-                    _vm._s(_vm.$t("Stucture Data")) +
-                    "\r\n          "
-                ),
-                _vm.config.nlpMode === "embedding"
-                  ? [
-                      _vm._v(
-                        "\r\n            :\r\n            " +
-                          _vm._s(_vm.$t("Embedding")) +
-                          "\r\n          "
-                      ),
-                    ]
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.config.nlpMode === "tokenization"
-                  ? [
-                      _vm._v(
-                        "\r\n            :\r\n            " +
-                          _vm._s(_vm.$t("Word Vector")) +
-                          "\r\n          "
-                      ),
-                    ]
-                  : _vm._e(),
-              ],
-              2
-            ),
-            _vm._v(" "),
-            _c("textarea", {
-              staticClass: "sentence-embedding-textarea",
-              attrs: { id: "SentenceEmbedding" },
-              domProps: { innerHTML: _vm._s(_vm.config.SentenceEmbedding) },
+        _c(
+          "div",
+          { staticClass: "five wide column" },
+          [
+            _c("StructureData", {
+              ref: "StructureData",
+              attrs: {
+                config: _vm.config,
+                localConfig: _vm.localConfig,
+                utils: _vm.utils,
+              },
             }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "field" }, [
-            _c("a", { staticClass: "ui fluid button" }, [
-              _vm._v(
-                "\r\n          " + _vm._s(_vm.$t("SAVE")) + "\r\n          "
-              ),
-              _c("i", { staticClass: "save outline icon" }),
-            ]),
-          ]),
-        ]),
+          ],
+          1
+        ),
       ]),
     ],
     1
@@ -31285,6 +31250,7 @@ __webpack_require__.r(__webpack_exports__);
     LoadingOverlay: () => {return __webpack_require__.e(/*! import() | components/LoadingOverlay */ "components/LoadingOverlay").then(__webpack_require__.bind(null, /*! ./LoadingOverlay/LoadingOverlay.vue */ "./src/components/LoadingOverlay/LoadingOverlay.vue"))},
     InputRawText: () => {return Promise.all(/*! import() | components/InputRawText */[__webpack_require__.e("vendors~components/InputRawText~components/PreprocessTextarea"), __webpack_require__.e("components/InputRawText")]).then(__webpack_require__.bind(null, /*! ./InputRawText/InputRawText.vue */ "./src/components/InputRawText/InputRawText.vue"))},
     PreprocessTextarea: () => {return Promise.all(/*! import() | components/PreprocessTextarea */[__webpack_require__.e("vendors~components/InputRawText~components/PreprocessTextarea"), __webpack_require__.e("components/PreprocessTextarea")]).then(__webpack_require__.bind(null, /*! ./PreprocessTextarea/PreprocessTextarea.vue */ "./src/components/PreprocessTextarea/PreprocessTextarea.vue"))},
+    StructureData: () => {return __webpack_require__.e(/*! import() | components/StructureData */ "components/StructureData").then(__webpack_require__.bind(null, /*! ./StructureData/StructureData.vue */ "./src/components/StructureData/StructureData.vue"))},
   }
 });
 
@@ -31407,9 +31373,11 @@ let config = {
   
   PreprocessText: '',
   PreprocessData: null,
+  PreprocessHeaders: [],
   PreprocessTextChanged: false,
   
-  SentenceEmbedding: '',
+  StructureText: '',
+  StructureData: null,
 }
 
 

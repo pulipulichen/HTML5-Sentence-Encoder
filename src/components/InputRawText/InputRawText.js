@@ -53,7 +53,7 @@ let InputRawText = {
       return await this.utils.AxiosUtils.get(path)
     },
     getInputRawData: function () {
-      if (this.InputRawData) {
+      if (this.config.InputRawData) {
         return this.config.InputRawData
       }
       
@@ -65,7 +65,7 @@ let InputRawText = {
       return this.config.InputRawData
     },
     getInputRawHeaders: function () {
-      if (this.InputRawHeaders) {
+      if (this.config.InputRawHeaders) {
         return this.config.InputRawHeaders
       }
       

@@ -1,0 +1,37 @@
+<div class="StructureData">
+
+  <div class="field">
+    <label for="SentenceEmbedding">
+      {{ $t('Stucture Data') }}
+      <template v-if="config.nlpMode === 'embedding'">
+        :
+        {{ $t('Embedding') }}
+      </template>
+      <template v-if="config.nlpMode === 'tokenization'">
+        :
+        {{ $t('Word Vector') }}
+      </template>
+    </label>
+    <textarea 
+      class="sentence-embedding-textarea"
+      id="SentenceEmbedding"
+      v-model="config.StructureText"></textarea>
+  </div>
+
+  <div class="fields">
+    <div class="field">
+      <a class="ui fluid button"
+         v-on:click="copy">
+        {{ $t('COPY') }}
+        <i class="copy icon"></i>
+      </a>
+    </div>
+    <div class="field">
+      <a class="ui fluid button"
+         v-on:click="save">
+        {{ $t('SAVE') }}
+        <i class="save outline icon"></i>
+      </a>
+    </div>
+  </div>
+</div>

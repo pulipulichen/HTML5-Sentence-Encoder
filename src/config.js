@@ -21,9 +21,11 @@ let config = {
   
   PreprocessText: '',
   PreprocessData: null,
+  PreprocessHeaders: [],
   PreprocessTextChanged: false,
   
-  SentenceEmbedding: '',
+  StructureText: '',
+  StructureData: null,
 }
 
 import styleConfig from './styles/style.config.js'

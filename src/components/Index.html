@@ -34,30 +34,13 @@
     </div>
 
     <div class="five wide column">
-      <div class="field">
-        <label for="SentenceEmbedding">
-          {{ $t('Stucture Data') }}
-          <template v-if="config.nlpMode === 'embedding'">
-            :
-            {{ $t('Embedding') }}
-          </template>
-          <template v-if="config.nlpMode === 'tokenization'">
-            :
-            {{ $t('Word Vector') }}
-          </template>
-        </label>
-        <textarea 
-          class="sentence-embedding-textarea"
-          id="SentenceEmbedding"
-          v-html="config.SentenceEmbedding"></textarea>
-      </div>
-
-      <div class="field">
-        <a class="ui fluid button">
-          {{ $t('SAVE') }}
-          <i class="save outline icon"></i>
-        </a>
-      </div>
+      <StructureData 
+        ref="StructureData"
+        v-bind:config="config"
+        v-bind:localConfig="localConfig"
+        v-bind:utils="utils">
+      </StructureData>
+      
     </div>
   </div>
 </div>

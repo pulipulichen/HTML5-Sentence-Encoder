@@ -11,7 +11,19 @@ let PreprocessTextarea = {
     'localConfig.locale'() {
       this.$i18n.locale = this.localConfig.locale;
     },
+    'config.PreprocessText' (newText, oldText) {
+      if (oldText === '') {
+        return false
+      }
+      
+      this.config.PreprocessData = null
+      this.config.PreprocessHeaders = null
+    },
     'config.PreprocessData' () {
+      if (this.config.PreprocessData === null) {
+        return false
+      }
+      
       this.config.PreprocessText = Papa.unparse(this.config.PreprocessData)
     }
   },
@@ -42,9 +54,41 @@ let PreprocessTextarea = {
       
       this.config.PreprocessData = data
       
+      this.next()
       //console.log(data)
       
       //console.log(transList)
+    },
+    getPreprocessData () {
+      if (this.config.PreprocessData) {
+        return this.config.PreprocessData
+      }
+      
+      let dataResult = Papa.parse(this.config.PreprocessText, {
+        header: true,
+        skipEmptyLines: true
+      })
+      this.config.PreprocessData = dataResult.data
+      return this.config.PreprocessData
+    },
+    getPreprocessHeaders () {
+      if (this.config.PreprocessHeaders) {
+        return this.config.PreprocessHeaders
+      }
+      
+      let headersResult = Papa.parse(this.config.PreprocessText, {
+        header: false,
+        preview: 1
+      })
+      this.config.PreprocessHeaders = headersResult.data[0]
+      
+      return this.config.PreprocessHeaders
+    },
+    next () {
+      let data = this.getPreprocessData()
+      let headers = this.getPreprocessHeaders()
+      
+      this.$parent.$refs.StructureData.buildStructureData(data, headers)
     }
   }
 }
