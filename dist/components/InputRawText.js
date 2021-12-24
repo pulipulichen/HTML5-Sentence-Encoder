@@ -293,7 +293,7 @@ let InputRawText = {
       return this.config.InputRawData
     },
     getInputRawHeaders: function () {
-      if (this.config.InputRawHeaders) {
+      if (this.config.InputRawHeaders && this.config.InputRawHeaders.length > 0) {
         return this.config.InputRawHeaders
       }
       

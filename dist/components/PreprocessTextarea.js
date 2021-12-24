@@ -195,6 +195,7 @@ let PreprocessTextarea = {
       }
       
       this.config.PreprocessText = Papa.unparse(this.config.PreprocessData)
+      console.log(this.config.PreprocessText)
     }
   },
   computed: {
@@ -224,6 +225,7 @@ let PreprocessTextarea = {
       
       this.config.PreprocessData = data
       
+      await this.utils.AsyncUtils.sleep()
       this.next()
       //console.log(data)
       
@@ -242,7 +244,7 @@ let PreprocessTextarea = {
       return this.config.PreprocessData
     },
     getPreprocessHeaders () {
-      if (this.config.PreprocessHeaders) {
+      if (this.config.PreprocessHeaders && this.config.PreprocessHeaders.length > 0) {
         return this.config.PreprocessHeaders
       }
       
@@ -250,6 +252,7 @@ let PreprocessTextarea = {
         header: false,
         preview: 1
       })
+      
       this.config.PreprocessHeaders = headersResult.data[0]
       
       return this.config.PreprocessHeaders
@@ -257,7 +260,7 @@ let PreprocessTextarea = {
     next () {
       let data = this.getPreprocessData()
       let headers = this.getPreprocessHeaders()
-      
+      console.log(headers)
       this.$parent.$refs.StructureData.buildStructureData(data, headers)
     }
   }

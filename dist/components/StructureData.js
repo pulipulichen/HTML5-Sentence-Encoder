@@ -226,8 +226,9 @@ let StructureData = {
     buildStructureData: async function (data, headers) {
       
       let key = headers[0]
+      console.log(headers)
       let input = data.map(item => item[key])
-      
+      console.log(input)
       let embedding = await this.parseSentenceEmbedding(input)
       console.log(embedding)
       window.E = embedding
