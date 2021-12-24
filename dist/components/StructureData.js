@@ -70,7 +70,7 @@ var render = function () {
             ? [
                 _vm._v(
                   "\n        :\n        " +
-                    _vm._s(_vm.$t("Word Vector")) +
+                    _vm._s(_vm.$t("Vector Space Model")) +
                     "\n      "
                 ),
               ]
