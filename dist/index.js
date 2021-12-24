@@ -32028,8 +32028,10 @@ __webpack_require__.r(__webpack_exports__);
 let inited = false
 let api
 
-//let url = 'https://pulipulichen.github.io/HTML-Simple-Classifier/index.html?api=1'
-let url = 'http://localhost:8383/HTML-Simple-Classifier/index.html?api=1'
+let url = 'https://pulipulichen.github.io/HTML-Simple-Classifier/index.html?api=1'
+if (location.href.startsWith('http://localhost:8383/')) {
+  url = 'http://localhost:8383/HTML-Simple-Classifier/index.html?api=1'
+}
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   openClassifier: async function (rawData, config = {}) {
