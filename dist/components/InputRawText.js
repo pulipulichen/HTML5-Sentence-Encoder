@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["components/InputRawText"],{
 
-/***/ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects%5Chtml%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CInputRawText%5CInputRawText.vue&lang=yaml":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@kazupon/vue-i18n-loader/lib!./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects%5Chtml%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CInputRawText%5CInputRawText.vue&lang=yaml ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FInputRawText%2FInputRawText.vue&lang=yaml":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@kazupon/vue-i18n-loader/lib!./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FInputRawText%2FInputRawText.vue&lang=yaml ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -27,7 +27,7 @@ module.exports = function (Component) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".input-raw-text-textarea[data-v-3399dfa2] {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\ninput[type=\"file\"][data-v-3399dfa2] {\n  display: none;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/InputRawText/InputRawText.less?vue&type=style&index=0&id=3399dfa2&lang=less&scoped=true&","InputRawText.less"],"names":[],"mappings":"AAAA;EAEE,sCAAA;EACA,0CAAA;EAEA,gBAAA;EACA,qBAAA;EACA,gBAAA;ACDF;ADIA;EACE,aAAA;ACFF","file":"InputRawText.less","sourcesContent":[".input-raw-text-textarea {\n  @height: calc(100vh - 15rem) !important;\n  height: @height;\n  max-height: @height;\n  \n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\n\ninput[type=\"file\"] {\n  display: none;\n}",".input-raw-text-textarea {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\ninput[type=\"file\"] {\n  display: none;\n}\n"]}]);
+exports.push([module.i, ".input-raw-text-textarea[data-v-3399dfa2] {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\ninput[type=\"file\"][data-v-3399dfa2] {\n  display: none;\n}\n", "",{"version":3,"sources":["/media/pudding/DATA/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/InputRawText/InputRawText.less?vue&type=style&index=0&id=3399dfa2&lang=less&scoped=true&","InputRawText.less"],"names":[],"mappings":"AAAA;EAEE,sCAAA;EACA,0CAAA;EAEA,gBAAA;EACA,qBAAA;EACA,gBAAA;ACDF;ADIA;EACE,aAAA;ACFF","file":"InputRawText.less","sourcesContent":[".input-raw-text-textarea {\n  @height: calc(100vh - 15rem) !important;\n  height: @height;\n  max-height: @height;\n  \n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\n\ninput[type=\"file\"] {\n  display: none;\n}",".input-raw-text-textarea {\n  height: calc(100vh - 15rem) !important;\n  max-height: calc(100vh - 15rem) !important;\n  white-space: pre;\n  overflow-wrap: normal;\n  overflow-x: auto;\n}\ninput[type=\"file\"] {\n  display: none;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -264,9 +264,17 @@ let InputRawText = {
       loadDemo: 'none',
       demoOptions: [
         {
+          path: './demo/qa-pet-fruit-unsupervised.csv',
+          name: 'Unsupervised'
+        },
+        {
+          path: './demo/qa-pet-fruit-unknown.csv',
+          name: 'Answer Unknown'
+        },
+        {
           path: './demo/qa-pet-fruit.csv',
           name: 'Q&A Pet or Fruit'
-        }
+        },
       ],
     }
   },
@@ -484,7 +492,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InputRawText_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InputRawText.js?vue&type=script&lang=js& */ "./src/components/InputRawText/InputRawText.js?vue&type=script&lang=js&?3eb8");
 /* empty/unused harmony star reexport *//* harmony import */ var _InputRawText_less_vue_type_style_index_0_id_3399dfa2_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./InputRawText.less?vue&type=style&index=0&id=3399dfa2&lang=less&scoped=true& */ "./src/components/InputRawText/InputRawText.less?vue&type=style&index=0&id=3399dfa2&lang=less&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-/* harmony import */ var _InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_5Chtml_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CInputRawText_5CInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects%5Chtml%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CInputRawText%5CInputRawText.vue&lang=yaml */ "./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects%5Chtml%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CInputRawText%5CInputRawText.vue&lang=yaml");
+/* harmony import */ var _InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FInputRawText_2FInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FInputRawText%2FInputRawText.vue&lang=yaml */ "./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FInputRawText%2FInputRawText.vue&lang=yaml");
 
 
 
@@ -506,7 +514,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* custom blocks */
 
-if (typeof _InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_5Chtml_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CInputRawText_5CInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"] === 'function') Object(_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_5Chtml_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CInputRawText_5CInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"])(component)
+if (typeof _InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FInputRawText_2FInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"] === 'function') Object(_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FInputRawText_2FInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"])(component)
 
 /* hot reload */
 if (false) { var api; }
@@ -515,19 +523,19 @@ component.options.__file = "src/components/InputRawText/InputRawText.vue"
 
 /***/ }),
 
-/***/ "./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects%5Chtml%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CInputRawText%5CInputRawText.vue&lang=yaml":
-/*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects%5Chtml%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CInputRawText%5CInputRawText.vue&lang=yaml ***!
-  \***************************************************************************************************************************************************************************************************************************************/
+/***/ "./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FInputRawText%2FInputRawText.vue&lang=yaml":
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FInputRawText%2FInputRawText.vue&lang=yaml ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_5Chtml_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CInputRawText_5CInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/@kazupon/vue-i18n-loader/lib!./InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects%5Chtml%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CInputRawText%5CInputRawText.vue&lang=yaml */ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects%5Chtml%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CInputRawText%5CInputRawText.vue&lang=yaml");
-/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_5Chtml_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CInputRawText_5CInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_5Chtml_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CInputRawText_5CInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_5Chtml_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CInputRawText_5CInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_5Chtml_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CInputRawText_5CInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_5Chtml_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CInputRawText_5CInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FInputRawText_2FInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/@kazupon/vue-i18n-loader/lib!./InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FInputRawText%2FInputRawText.vue&lang=yaml */ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/InputRawText/InputRawText.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FInputRawText%2FInputRawText.vue&lang=yaml");
+/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FInputRawText_2FInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FInputRawText_2FInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FInputRawText_2FInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FInputRawText_2FInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_kazupon_vue_i18n_loader_lib_index_js_InputRawText_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FInputRawText_2FInputRawText_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ })
 

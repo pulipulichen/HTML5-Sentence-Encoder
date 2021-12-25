@@ -10,8 +10,12 @@ let InputRawText = {
       loadDemo: 'none',
       demoOptions: [
         {
-          path: './demo/qa-pet-fruit-unknown.csv',
+          path: './demo/qa-pet-fruit-unsupervised.csv',
           name: 'Unsupervised'
+        },
+        {
+          path: './demo/qa-pet-fruit-unknown.csv',
+          name: 'Answer Unknown'
         },
         {
           path: './demo/qa-pet-fruit.csv',

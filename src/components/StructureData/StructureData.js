@@ -91,7 +91,12 @@ let StructureData = {
           embeddingItem[key + j] = e
         })
         
-        embeddingItem[headers[1]] = item[headers[1]]
+        if (headers[1]) {
+          embeddingItem[headers[1]] = item[headers[1]]
+        }
+        else {
+          embeddingItem['class'] = '?'
+        }
         
         return embeddingItem
       })
