@@ -33,15 +33,15 @@ let InputRawText = {
         return false
       }
       
-      this.config.InputRawText = await this.startToLoadDemo(this.loadDemo)
+      this.localConfig.InputRawText = await this.startToLoadDemo(this.loadDemo)
       
       this.loadDemo = 'none'
     },
-    'config.InputRawText' () {
+    'localConfig.InputRawText' () {
       this.config.InputRawHeaders = []
       this.config.InputRawData = null
       this.config.InputRawArray = null
-    }
+    },
   },
   computed: {
 
@@ -51,11 +51,19 @@ let InputRawText = {
   },
   methods: {
     loadDefaultDemo: async function () {
+      while (this.config.inited === false) {
+        await this.utils.AsyncUtils.sleep()
+      }
+      
+      if (this.localConfig.InputRawText !== '') {
+        return false
+      }
+      
       await this.utils.AsyncUtils.sleep()
       this.loadDemo = this.demoOptions[0].path
       await this.utils.AsyncUtils.sleep()
-      //this.trans()
-      this.tokenize()
+      this.trans()
+      //this.tokenize()
     },
     startToLoadDemo: async function (path) {
       if (!path) {
@@ -69,7 +77,7 @@ let InputRawText = {
         return this.config.InputRawData
       }
       
-      let dataResult = Papa.parse(this.config.InputRawText, {
+      let dataResult = Papa.parse(this.localConfig.InputRawText, {
         header: true,
         skipEmptyLines: true
       })
@@ -81,7 +89,7 @@ let InputRawText = {
         return this.config.InputRawArray
       }
       
-      let dataResult = Papa.parse(this.config.InputRawText, {
+      let dataResult = Papa.parse(this.localConfig.InputRawText, {
         skipEmptyLines: true
       })
       this.config.InputRawArray = dataResult.data
@@ -92,7 +100,7 @@ let InputRawText = {
         return this.config.InputRawHeaders
       }
       
-      let headersResult = Papa.parse(this.config.InputRawText, {
+      let headersResult = Papa.parse(this.localConfig.InputRawText, {
         header: false,
         preview: 1
       })
@@ -115,7 +123,7 @@ let InputRawText = {
       let filename = 'sentence-encode'
         + '-' 
         + (new Date()).mmddhhmm()
-      //this.utils.FileUtils.download(filename, this.config.InputRawText)
+      //this.utils.FileUtils.download(filename, this.localConfig.InputRawText)
       
       this.utils.FileUtils.downloadODS(filename, this.getInputRawArray())
     },
@@ -147,9 +155,9 @@ let InputRawText = {
         let result = evt.target.result
         if (type === 'application/vnd.oasis.opendocument.spreadsheet'
                 || type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
-          this.config.InputRawText = await this.processUploadTypeSheet(result)
+          this.localConfig.InputRawText = await this.processUploadTypeSheet(result)
         } else {
-          this.config.InputRawText = result
+          this.localConfig.InputRawText = result
         }
         this.$refs.InputFileOpenTrigger.value = ''
       }

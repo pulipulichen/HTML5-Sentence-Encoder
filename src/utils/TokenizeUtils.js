@@ -3,9 +3,9 @@ import PuliPostMessageAPI from './puli-post-message-api/puli-post-message-api.js
 let inited = false
 let api
 
-let url = 'https://pulipulichen.github.io/jieba-js/'
+let url = 'https://pulipulichen.github.io/jieba-js/index.html?api=1'
 if (location.href.startsWith('http://localhost:8383/')) {
-  url = 'http://localhost:8383/jieba-js/index.html'
+  url = 'http://localhost:8383/jieba-js/index.html?api=1'
 }
 
 export default {

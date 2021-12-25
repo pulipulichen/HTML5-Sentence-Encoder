@@ -13,7 +13,7 @@ let config = {
   // --------------------
   nlpMode: null,
   loading: false,
-  InputRawText: '',
+  //InputRawText: '',
   
   InputRawHeaders: [],
   InputRawData: null,
