@@ -73,6 +73,15 @@ let StructureData = {
       })
     },
     buildStructureData: async function (data, headers) {
+      this.config.StructureText = ''
+      if (this.config.nlpMode === 'embedding') {
+        return await this.buildStructureDataEmbedding(data, headers)
+      }
+      else if (this.config.nlpMode === 'tokenization') {
+        return await this.buildStructureDataTokenization(data, headers)
+      }
+    },
+    buildStructureDataEmbedding: async function (data, headers) {
       
       let key = headers[0]
       //console.log(headers)
@@ -101,6 +110,53 @@ let StructureData = {
         return embeddingItem
       })
     },
+    buildStructureDataTokenization: async function (data, headers) {
+      
+      let key = headers[0]
+      //console.log(headers)
+      let input = data.map(item => item[key])
+      
+      let tokenList = []
+      let nullMap = {}
+      
+      let inputVSM = input.map(text => {
+        let vsm = {}
+        text.split(' ').forEach(word => {
+          let tokenID = tokenList.indexOf(word)
+          let vsmKey = key + word
+          if (tokenID === -1) {
+            //tokenID = tokenList.length
+            tokenList.push(word)
+            nullMap[vsmKey] = 0
+          }
+          
+          if (!vsm[vsmKey]) {
+            vsm[vsmKey] = 0
+          }
+          vsm[vsmKey]++
+        })
+        
+        return vsm
+      })
+      
+      this.config.StructureData = inputVSM.map((vsm, i) => {
+        let baseMap = {}
+        Object.assign(baseMap, nullMap)
+        
+        Object.keys(vsm).forEach(vsmKey => {
+          baseMap[vsmKey] = vsm[vsmKey]
+        })
+        
+        if (headers[1]) {
+          baseMap[headers[1]] = data[i][headers[1]]
+        }
+        else {
+          baseMap['class'] = '?'
+        }
+        
+        return baseMap
+      })
+    },
     copy () {
       this.utils.ClipboardUtils.copyPlainString(Papa.unparse(this.config.StructureData, {
         delimiter: '\t'
@@ -113,7 +169,7 @@ let StructureData = {
       this.utils.FileUtils.downloadODS(filename, this.config.StructureArray)
     },
     classify () {
-      console.log(this.config.StructureArray)
+      //console.log(this.config.StructureArray)
       this.utils.ClassifyUtils.openClassifier(this.config.StructureArray, {
         classifier: 'KNearestNeighbors'
       })

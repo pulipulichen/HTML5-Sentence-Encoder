@@ -215,6 +215,8 @@ let PreprocessTextarea = {
   methods: {
     trans: async function (data, headers) {
       
+      this.config.PreprocessText = ''
+      
       let key = headers[0]
       
       let textList = data.map(item => {
@@ -227,11 +229,16 @@ let PreprocessTextarea = {
       let transList = await this.utils.TransUtils.trans(textList)
       
       // 組合
-      data.forEach((item, i) => {
-        item[key] = transList[i]
+      let transData = data.map((item, i) => {
+        let newItem = {}
+        Object.assign(newItem, item)
+        newItem[key] = transList[i]
+        return newItem
       })
       
-      this.config.PreprocessData = data
+      //console.log(data[0], transData[0])
+      
+      this.config.PreprocessData = transData
       
       //await this.utils.AsyncUtils.sleep()
       setTimeout(() => {
@@ -243,6 +250,8 @@ let PreprocessTextarea = {
       //console.log(transList)
     },
     tokenize: async function (data, headers) {
+      
+      this.config.PreprocessText = ''
       
       let key = headers[0]
       
@@ -256,11 +265,14 @@ let PreprocessTextarea = {
       let transList = await this.utils.TokenizeUtils.tokenize(textList)
       
       // 組合
-      data.forEach((item, i) => {
-        item[key] = transList[i]
+      let transData = data.map((item, i) => {
+        let newItem = {}
+        Object.assign(newItem, item)
+        newItem[key] = transList[i]
+        return newItem
       })
       
-      this.config.PreprocessData = data
+      this.config.PreprocessData = transData
       
       //await this.utils.AsyncUtils.sleep()
       setTimeout(() => {

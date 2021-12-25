@@ -55,6 +55,7 @@ let InputRawText = {
       this.loadDemo = this.demoOptions[0].path
       await this.utils.AsyncUtils.sleep()
       //this.trans()
+      this.tokenize()
     },
     startToLoadDemo: async function (path) {
       if (!path) {
@@ -103,11 +104,10 @@ let InputRawText = {
       this.config.loading = true
       this.config.nlpMode = 'embedding'
       
-      let data = this.getInputRawData()
-      let headers = this.getInputRawHeaders()
+      let data = [].concat(this.getInputRawData())
+      let headers = [].concat(this.getInputRawHeaders())
       
       await this.$parent.$refs.PreprocessTextarea.trans(data, headers)
-      
       
       this.config.loading = false
     },
@@ -195,8 +195,10 @@ let InputRawText = {
       this.config.loading = true
       this.config.nlpMode = 'tokenization'
       
-      let data = this.getInputRawData()
-      let headers = this.getInputRawHeaders()
+      let data = [].concat(this.getInputRawData())
+      //console.log(data)
+      let headers = [].concat(this.getInputRawHeaders())
+      //console.log(headers)
       
       await this.$parent.$refs.PreprocessTextarea.tokenize(data, headers)
       
