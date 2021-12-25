@@ -264,16 +264,16 @@ let InputRawText = {
       loadDemo: 'none',
       demoOptions: [
         {
+          path: './demo/qa-pet-fruit.csv',
+          name: 'Q&A Pet or Fruit'
+        },
+        {
           path: './demo/qa-pet-fruit-unsupervised.csv',
           name: 'Unsupervised'
         },
         {
           path: './demo/qa-pet-fruit-unknown.csv',
           name: 'Answer Unknown'
-        },
-        {
-          path: './demo/qa-pet-fruit.csv',
-          name: 'Q&A Pet or Fruit'
         },
       ],
     }
