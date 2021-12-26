@@ -14,7 +14,7 @@ let InputRawText = {
           name: 'Q&A Pet or Fruit'
         },
         {
-          path: './demo/qa-pet-fruit-unsupervised.csv',
+          path: './demo/qa-pet-fruit-unsupervised_sort.csv',
           name: 'Unsupervised'
         },
         {
