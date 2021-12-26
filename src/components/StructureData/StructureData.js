@@ -87,8 +87,16 @@ let StructureData = {
       //console.log(headers)
       let input = data.map(item => item[key])
       //console.log(input)
-      let embeddingList = await this.parseSentenceEmbedding(input)
-      //console.log(embedding)
+      let embeddingList = []
+      for (let i = 0; i < input.length; i++) {
+        let e = await this.parseSentenceEmbedding(input[i])
+        embeddingList.push(e[0])
+        if (i > 0 && i % 10 === 0) {
+          console.log(i)
+          await this.utils.AsyncUtils.sleep()
+        }
+      }
+      //console.log(embeddingList)
       //window.E = embedding
       //console.log('buildStructureData')
       
@@ -99,6 +107,7 @@ let StructureData = {
         embedding.forEach((e, j) => {
           embeddingItem[key + j] = e
         })
+        //console.log(embeddingItem)
         
         if (headers[1]) {
           embeddingItem[headers[1]] = item[headers[1]]
