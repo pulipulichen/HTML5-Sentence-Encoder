@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["components/StructureData"],{
 
-/***/ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FStructureData%2FStructureData.vue&lang=yaml":
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@kazupon/vue-i18n-loader/lib!./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FStructureData%2FStructureData.vue&lang=yaml ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects-Windows%5Cnode-app%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CStructureData%5CStructureData.vue&lang=yaml":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@kazupon/vue-i18n-loader/lib!./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects-Windows%5Cnode-app%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CStructureData%5CStructureData.vue&lang=yaml ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -27,7 +27,7 @@ module.exports = function (Component) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(true);
 // Module
-exports.push([module.i, ".StructureData .sentence-embedding-textarea[data-v-13b0956a] {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n  white-space: pre !important;\n  overflow-wrap: normal !important;\n  overflow-x: auto !important;\n}\n", "",{"version":3,"sources":["/media/pudding/DATA/pudding/Code-Porjects/html/HTML5-Sentence-Encoder/src/components/StructureData/StructureData.less?vue&type=style&index=0&id=13b0956a&lang=less&scoped=true&","StructureData.less"],"names":[],"mappings":"AAAA;EAEE,wCAAA;EACA,4CAAA;EAEA,2BAAA;EACA,gCAAA;EACA,2BAAA;ACDF","file":"StructureData.less","sourcesContent":[".StructureData .sentence-embedding-textarea {\n  @height: calc(100vh - 10.6rem);\n  height: @height !important;\n  max-height: @height !important;\n  \n  white-space: pre !important;\n  overflow-wrap: normal !important;\n  overflow-x: auto !important;\n}",".StructureData .sentence-embedding-textarea {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n  white-space: pre !important;\n  overflow-wrap: normal !important;\n  overflow-x: auto !important;\n}\n"]}]);
+exports.push([module.i, ".StructureData .sentence-embedding-textarea[data-v-13b0956a] {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n  white-space: pre !important;\n  overflow-wrap: normal !important;\n  overflow-x: auto !important;\n}\n", "",{"version":3,"sources":["E:/pudding/Code-Porjects-Windows/node-app/HTML5-Sentence-Encoder/src/components/StructureData/StructureData.less?vue&type=style&index=0&id=13b0956a&lang=less&scoped=true&","StructureData.less"],"names":[],"mappings":"AAAA;EAEE,wCAAA;EACA,4CAAA;EAEA,2BAAA;EACA,gCAAA;EACA,2BAAA;ACDF","file":"StructureData.less","sourcesContent":[".StructureData .sentence-embedding-textarea {\n  @height: calc(100vh - 10.6rem);\n  height: @height !important;\n  max-height: @height !important;\n  \n  white-space: pre !important;\n  overflow-wrap: normal !important;\n  overflow-x: auto !important;\n}",".StructureData .sentence-embedding-textarea {\n  height: calc(100vh - 10.6rem) !important;\n  max-height: calc(100vh - 10.6rem) !important;\n  white-space: pre !important;\n  overflow-wrap: normal !important;\n  overflow-x: auto !important;\n}\n"]}]);
 // Exports
 module.exports = exports;
 
@@ -55,13 +55,13 @@ var render = function () {
         "label",
         { attrs: { for: "SentenceEmbedding" } },
         [
-          _vm._v("\n      " + _vm._s(_vm.$t("Stucture Data")) + "\n      "),
+          _vm._v("\r\n      " + _vm._s(_vm.$t("Stucture Data")) + "\r\n      "),
           _vm.config.nlpMode === "embedding"
             ? [
                 _vm._v(
-                  "\n        :\n        " +
+                  "\r\n        :\r\n        " +
                     _vm._s(_vm.$t("Embedding")) +
-                    "\n      "
+                    "\r\n      "
                 ),
               ]
             : _vm._e(),
@@ -69,9 +69,9 @@ var render = function () {
           _vm.config.nlpMode === "tokenization"
             ? [
                 _vm._v(
-                  "\n        :\n        " +
+                  "\r\n        :\r\n        " +
                     _vm._s(_vm.$t("Vector Space Model")) +
-                    "\n      "
+                    "\r\n      "
                 ),
               ]
             : _vm._e(),
@@ -112,7 +112,7 @@ var render = function () {
             on: { click: _vm.copy },
           },
           [
-            _vm._v("\n        " + _vm._s(_vm.$t("COPY")) + "\n        "),
+            _vm._v("\r\n        " + _vm._s(_vm.$t("COPY")) + "\r\n        "),
             _c("i", { staticClass: "copy icon" }),
           ]
         ),
@@ -127,7 +127,7 @@ var render = function () {
             on: { click: _vm.save },
           },
           [
-            _vm._v("\n        " + _vm._s(_vm.$t("SAVE")) + "\n        "),
+            _vm._v("\r\n        " + _vm._s(_vm.$t("SAVE")) + "\r\n        "),
             _c("i", { staticClass: "save outline icon" }),
           ]
         ),
@@ -142,7 +142,9 @@ var render = function () {
             on: { click: _vm.classify },
           },
           [
-            _vm._v("\n        " + _vm._s(_vm.$t("CLASSIFY")) + "\n        "),
+            _vm._v(
+              "\r\n        " + _vm._s(_vm.$t("CLASSIFY")) + "\r\n        "
+            ),
             _c("i", { staticClass: "sitemap icon" }),
           ]
         ),
@@ -441,7 +443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _StructureData_js_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StructureData.js?vue&type=script&lang=js& */ "./src/components/StructureData/StructureData.js?vue&type=script&lang=js&?6a53");
 /* empty/unused harmony star reexport *//* harmony import */ var _StructureData_less_vue_type_style_index_0_id_13b0956a_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StructureData.less?vue&type=style&index=0&id=13b0956a&lang=less&scoped=true& */ "./src/components/StructureData/StructureData.less?vue&type=style&index=0&id=13b0956a&lang=less&scoped=true&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-/* harmony import */ var _StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FStructureData_2FStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FStructureData%2FStructureData.vue&lang=yaml */ "./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FStructureData%2FStructureData.vue&lang=yaml");
+/* harmony import */ var _StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_Windows_5Cnode_app_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CStructureData_5CStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects-Windows%5Cnode-app%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CStructureData%5CStructureData.vue&lang=yaml */ "./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects-Windows%5Cnode-app%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CStructureData%5CStructureData.vue&lang=yaml");
 
 
 
@@ -463,7 +465,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* custom blocks */
 
-if (typeof _StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FStructureData_2FStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"] === 'function') Object(_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FStructureData_2FStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"])(component)
+if (typeof _StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_Windows_5Cnode_app_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CStructureData_5CStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"] === 'function') Object(_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_Windows_5Cnode_app_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CStructureData_5CStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_4__["default"])(component)
 
 /* hot reload */
 if (false) { var api; }
@@ -472,19 +474,19 @@ component.options.__file = "src/components/StructureData/StructureData.vue"
 
 /***/ }),
 
-/***/ "./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FStructureData%2FStructureData.vue&lang=yaml":
-/*!****************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FStructureData%2FStructureData.vue&lang=yaml ***!
-  \****************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects-Windows%5Cnode-app%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CStructureData%5CStructureData.vue&lang=yaml":
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects-Windows%5Cnode-app%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CStructureData%5CStructureData.vue&lang=yaml ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FStructureData_2FStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/@kazupon/vue-i18n-loader/lib!./StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FStructureData%2FStructureData.vue&lang=yaml */ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=%2Fmedia%2Fpudding%2FDATA%2Fpudding%2FCode-Porjects%2Fhtml%2FHTML5-Sentence-Encoder%2Fsrc%2Fcomponents%2FStructureData%2FStructureData.vue&lang=yaml");
-/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FStructureData_2FStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FStructureData_2FStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FStructureData_2FStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FStructureData_2FStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_2Fmedia_2Fpudding_2FDATA_2Fpudding_2FCode_Porjects_2Fhtml_2FHTML5_Sentence_Encoder_2Fsrc_2Fcomponents_2FStructureData_2FStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_Windows_5Cnode_app_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CStructureData_5CStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/@kazupon/vue-i18n-loader/lib!./StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects-Windows%5Cnode-app%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CStructureData%5CStructureData.vue&lang=yaml */ "./node_modules/@kazupon/vue-i18n-loader/lib/index.js!./src/components/StructureData/StructureData.yaml?vue&type=custom&index=0&blockType=i18n&issuerPath=E%3A%5Cpudding%5CCode-Porjects-Windows%5Cnode-app%5CHTML5-Sentence-Encoder%5Csrc%5Ccomponents%5CStructureData%5CStructureData.vue&lang=yaml");
+/* harmony import */ var _node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_Windows_5Cnode_app_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CStructureData_5CStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_Windows_5Cnode_app_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CStructureData_5CStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_Windows_5Cnode_app_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CStructureData_5CStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_Windows_5Cnode_app_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CStructureData_5CStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_kazupon_vue_i18n_loader_lib_index_js_StructureData_yaml_vue_type_custom_index_0_blockType_i18n_issuerPath_E_3A_5Cpudding_5CCode_Porjects_Windows_5Cnode_app_5CHTML5_Sentence_Encoder_5Csrc_5Ccomponents_5CStructureData_5CStructureData_vue_lang_yaml__WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ })
 
