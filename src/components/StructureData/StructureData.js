@@ -139,10 +139,16 @@ let StructureData = {
             nullMap[vsmKey] = 0
           }
           
+          // Word Freq
+//          if (!vsm[vsmKey]) {
+//            vsm[vsmKey] = 0
+//          }
+//          vsm[vsmKey]++
+          
+          // Word of Bags
           if (!vsm[vsmKey]) {
-            vsm[vsmKey] = 0
+            vsm[vsmKey] = 1
           }
-          vsm[vsmKey]++
         })
         
         return vsm
@@ -180,7 +186,10 @@ let StructureData = {
     classify () {
       //console.log(this.config.StructureArray)
       this.utils.ClassifyUtils.openClassifier(this.config.StructureArray, {
-        classifier: 'KNearestNeighbors'
+        classifier: 'KNearestNeighbors',
+        classifierOptions: {
+          KNearestNeighborsOptionsK: 1
+        }
       })
     }
   }

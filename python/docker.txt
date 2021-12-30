@@ -1,2 +1,0 @@
-kubectl run tensorflow-notebook --image="pachyderm/tensorflow-notebook"
-kubectl run tfnb --image="tensorflow/tensorflow"
