@@ -8,6 +8,7 @@ import numpy as np
 from pandas_ods_reader import read_ods
 
 base_path = "input.ods"
+sheet_index = 0
 df = read_ods(base_path, sheet_index, headers=True)
 sentences = np.array(df)
 
