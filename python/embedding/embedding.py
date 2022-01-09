@@ -1,5 +1,5 @@
 # https://colab.research.google.com/#create=true
-!pip install tensorflow_hub tensorflow_text pandas_ods_reader csv
+!pip install tensorflow_hub tensorflow_text pandas_ods_reader
 
 '''
 Load sentences from ods
