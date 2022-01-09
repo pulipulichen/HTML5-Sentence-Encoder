@@ -1,5 +1,5 @@
 # https://colab.research.google.com/#create=true
-!pip install tensorflow_hub tensorflow_text pandas_ods_reader
+!pip install tensorflow_hub tensorflow_text pandas_ods_reader deep-translator
 
 '''
 Load sentences from ods
@@ -20,15 +20,23 @@ sentenceHeader = sheetArray[0][0]
 sentences = [i[0] for i in sheetArray[1:]]
 
 '''
+Translate
+'''
+
+from deep_translator import GoogleTranslator
+translator = GoogleTranslator(source='auto', target='en')
+translatedSentences = [translator.translate(i) for i in sentences]
+
+'''
 Convert sentences to embeddings
 '''
 import tensorflow_hub as hub
 import tensorflow_text
 
 encoder = hub.KerasLayer("https://tfhub.dev/google/sentence-t5/st5-large/1")
-embedding = encoder(sentences)
+embedding = encoder(translatedSentences)
 
-X = np.array(embedding.numpy().tolist())
+X = np.array(embedding)[0]
 
 embeddingLen = len(X[0])
 embeddingHeaders = [sentenceHeader+'{}'.format(i) for i in range(0, embeddingLen)]
