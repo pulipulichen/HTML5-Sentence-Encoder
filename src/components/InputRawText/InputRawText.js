@@ -21,6 +21,10 @@ let InputRawText = {
           path: './demo/qa-pet-fruit-unknown.csv',
           name: 'Answer Unknown'
         },
+//        {
+//          path: './demo/SYT.csv',
+//          name: 'SYT'
+//        },
       ],
     }
   },
