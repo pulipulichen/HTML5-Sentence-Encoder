@@ -32,12 +32,13 @@ export default {
     
     //console.log(data)
     let data = text
+    // console.log(data)
     
     let result = await api.send(url, data, {debug: false})
     
     if (isArray === true) {
       result = result.split('\n')
-      result.shift()
+      // result.shift()
     }
     
     this.cache[key] = result
